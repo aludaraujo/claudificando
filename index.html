@@ -348,6 +348,39 @@
   .hero-content .eyebrow {
     color: var(--laranja);
   }
+  .hero-logo {
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    animation: fadeInDown 0.8s ease-out;
+  }
+  .hero-logo-main {
+    font-family: 'Campeche', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--offwhite);
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+  .hero-logo-sub {
+    font-family: 'FaracoHand', cursive;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--laranja);
+    font-weight: 400;
+    line-height: 1;
+  }
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   .hero-content h1 {
     margin-bottom: 28px;
     color: var(--offwhite);
@@ -833,6 +866,10 @@
 <section class="hero">
   <div class="hero-bg" style="background-image:url('assets/vaquinha.png');background-size:cover;background-position:center;"></div>
   <div class="hero-content">
+    <div class="hero-logo">
+      <div class="hero-logo-main">CLAUDIFICANDO</div>
+      <div class="hero-logo-sub">o seu conteúdo</div>
+    </div>
     <span class="eyebrow">Ao vivo nos dias 10 e 11 de Julho</span>
     <h1>Você não precisa<span class="br-mobile"></span> de mais ideias de conteúdo. Você precisa parar de ser <em>uma cópia cuspida e c@gada</em> de todo mundo do seu nicho.</h1>
     <p class="hero-sub">Em 2 dias, você vai mapear ao vivo a sua marca pessoal, configurar o Claude com a sua voz e transformar o seu posicionamento em uma estratégia de conteúdo prática que converte — sem copiar as mesmas experts genéricas que aparecem no seu explorar toda semana.</p>
