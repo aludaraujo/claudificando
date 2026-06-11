@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obrigado! | Claudificando seu Conteúdo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --laranja: #E96741;
+      --offwhite: #F0EEE5;
+      --offblack: #252525;
+      --offwhite-dark: rgba(240, 238, 229, 0.95);
+    }
+
+    @font-face {
+      font-family: 'Larken';
+      src: url('assets/fonts/Larken-RegularItalic.otf') format('opentype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Larken';
+      src: url('assets/fonts/Larken-MediumItalic.otf') format('opentype');
+      font-weight: 500;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Larken';
+      src: url('assets/fonts/Larken-BoldItalic.otf') format('opentype');
+      font-weight: 700;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Campeche';
+      src: url('assets/fonts/Campeche-Regular.otf') format('opentype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Campeche';
+      src: url('assets/fonts/Campeche-Bold.otf') format('opentype');
+      font-weight: 700;
+    }
+
+    body {
+      font-family: 'Larken', serif;
+      color: var(--offblack);
+      background: var(--offwhite);
+    }
+
+    /* HERO COM VAQUINHA */
+    .hero-section {
+      background: linear-gradient(135deg, var(--offwhite) 0%, #fafaf8 100%);
+      background-image: url('assets/vaquinha.png');
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: multiply;
+      position: relative;
+      padding: 80px 20px;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(240, 238, 229, 0.85);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-title {
+      font-family: 'Campeche', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--offblack);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-family: 'Larken', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--offblack);
+      margin-bottom: 32px;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    /* BOTÃO */
+    .btn {
+      display: inline-block;
+      background: var(--laranja);
+      color: var(--offwhite);
+      padding: 16px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: 'Campeche', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(233, 103, 65, 0.3);
+    }
+
+    .btn:hover {
+      background: #d55a31;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(233, 103, 65, 0.4);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    /* BANNER MARQUEE */
+    .marquee-section {
+      background: var(--laranja);
+      padding: 20px 0;
+      overflow: hidden;
+      position: relative;
+      margin-top: 60px;
+    }
+
+    .marquee-track {
+      display: flex;
+      white-space: nowrap;
+      animation: marquee 18s linear infinite;
+      gap: 40px;
+    }
+
+    .marquee-track span {
+      display: inline-block;
+      font-family: 'Campeche', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--offwhite);
+      letter-spacing: 2px;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* FOOTER */
+    .static-footer {
+      background: var(--offblack);
+      color: var(--offwhite);
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      .hero-section {
+        padding: 60px 20px;
+        min-height: 60vh;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .btn {
+        padding: 14px 24px;
+        font-size: 0.95rem;
+      }
+
+      .marquee-track span {
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Acessibilidade */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-content {
+        animation: none;
+      }
+
+      .marquee-track {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO COM VAQUINHA -->
+<section class="hero-section">
+  <div class="hero-content">
+    <h1 class="hero-title">Agora você precisa fazer uma coisa muito importante:</h1>
+    <p class="hero-subtitle">Entrar pro grupo de WhatsApp da imersão para receber todos os avisos e links.</p>
+    <a href="https://chat.whatsapp.com/KhjgNeFhJ43HEDNNCG5IkB?s=cl&p=i&ilr=4" target="_blank" class="btn">
+      Não vou dar bobeira, já vou entrar agora!
+    </a>
+  </div>
+</section>
+
+<!-- BANNER ANIMADO -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span>10 e 11 de julho</span>
+    <span>Ao vivo + gravação</span>
+    <span>Claude na prática</span>
+    <span>10 e 11 de julho</span>
+    <span>Ao vivo + gravação</span>
+    <span>Claude na prática</span>
+    <span>10 e 11 de julho</span>
+    <span>Ao vivo + gravação</span>
+    <span>Claude na prática</span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="static-footer">
+  <p>Todos os direitos reservados ©<br>
+  Studio Propositum LTDA ®<br>
+  CNPJ 46.934.525/0001-03</p>
+</footer>
+
+</body>
+</html>
