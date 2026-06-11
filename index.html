@@ -671,6 +671,9 @@
     gap: 16px;
     margin: 40px 0;
   }
+  /* Colunas mobile ficam ocultas no desktop */
+  .testimonials-col { display: none; }
+
   @media (max-width: 640px) {
     .testimonials-grid {
       display: flex;
@@ -687,8 +690,6 @@
     /* Esconde o grid normal no mobile */
     .testimonials-grid > .testimonial-card { display: none; }
   }
-  /* Colunas mobile ficam ocultas no desktop */
-  .testimonials-col { display: none; }
 
   .testimonial-card {
     background: transparent;
