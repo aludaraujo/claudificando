@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claudificando seu Conteúdo — Workshop 10 e 11 de Julho</title>
+<style>
+  /* ============================================================
+     FONTES CUSTOMIZADAS
+  ============================================================ */
+  @font-face {
+    font-family: 'Larken';
+    src: url('assets/fonts/Larken-RegularItalic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Larken';
+    src: url('assets/fonts/Larken-MediumItalic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Larken';
+    src: url('assets/fonts/Larken-BoldItalic.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Campeche';
+    src: url('assets/fonts/Campeche-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Campeche';
+    src: url('assets/fonts/Campeche-SemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Campeche';
+    src: url('assets/fonts/Campeche-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Asgard';
+    src: url('assets/fonts/Asgard.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'FaracoHand';
+    src: url('assets/fonts/FaracoHand.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  /* ============================================================
+     RESET & BASE
+  ============================================================ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --laranja: #E96741;
+    --offwhite: #F0EEE5;
+    --offblack: #252525;
+    --offwhite-dark: #E2DFD5;
+    --footer-h: 72px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--offwhite);
+    color: var(--offblack);
+    font-family: 'Campeche', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    padding-bottom: var(--footer-h);
+  }
+
+  /* ============================================================
+     TYPOGRAPHY
+  ============================================================ */
+  .font-title {
+    font-family: 'Larken', 'Georgia', 'Times New Roman', serif;
+    font-style: italic;
+  }
+
+  .font-hand {
+    font-family: 'Faraco Hand', 'Dancing Script', cursive;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--laranja);
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .eyebrow-white { color: var(--offwhite); }
+
+  h1, h2, h3 {
+    font-family: 'Larken', serif;
+    font-style: italic;
+    line-height: 1.2;
+  }
+
+  /* Eyebrows e labels: Campeche caps + Asgard misturado via pseudo */
+  .eyebrow, .section-label-caps {
+    font-family: 'Campeche', sans-serif;
+    font-weight: 700;
+  }
+
+  /* Detalhes hand */
+  .hand {
+    font-family: 'FaracoHand', cursive;
+    font-style: normal;
+  }
+
+  h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+  h2 { font-size: clamp(1.6rem, 3.5vw, 2.6rem); }
+  h3 { font-size: clamp(1.2rem, 2.5vw, 1.8rem); }
+
+  p { margin-bottom: 1em; }
+  p:last-child { margin-bottom: 0; }
+
+  .highlight { color: var(--laranja); }
+  .text-white { color: var(--offwhite); }
+
+  /* ============================================================
+     BUTTONS
+  ============================================================ */
+  .btn {
+    display: inline-block;
+    background: var(--laranja);
+    color: var(--offwhite);
+    border: none;
+    border-radius: 50px;
+    padding: 18px 36px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    transition: opacity 0.2s, transform 0.15s;
+    line-height: 1.3;
+  }
+  .btn:hover { opacity: 0.88; transform: translateY(-2px); }
+  .btn .btn-sub {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 400;
+    margin-top: 4px;
+    opacity: 0.88;
+  }
+  .btn-outline {
+    background: transparent;
+    border: 2px solid var(--laranja);
+    color: var(--laranja);
+  }
+  .btn-white {
+    background: var(--offwhite);
+    color: var(--laranja);
+  }
+  .btn-block { display: block; width: 100%; }
+  .btn-center { display: block; width: fit-content; margin: 0 auto; }
+
+  /* ============================================================
+     LAYOUT HELPERS
+  ============================================================ */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .container-wide {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section { padding: 80px 0; }
+  section.tight { padding: 56px 0; }
+
+  .section-dark { background: var(--offblack); }
+  .section-offwhite { background: var(--offwhite); }
+
+  /* ============================================================
+     PROGRESS BAR
+  ============================================================ */
+  .urgency-wrap {
+    text-align: center;
+    margin-top: 24px;
+  }
+  .progress-bar-bg {
+    background: rgba(255,255,255,0.15);
+    border-radius: 50px;
+    height: 10px;
+    width: 100%;
+    max-width: 320px;
+    margin: 8px auto;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    background: var(--laranja);
+    height: 100%;
+    border-radius: 50px;
+    animation: fillbar 2.5s ease-out forwards;
+    width: 0%;
+  }
+  @keyframes fillbar {
+    to { width: 73%; }
+  }
+  .section-dark .progress-bar-bg { background: rgba(255,255,255,0.12); }
+  .section-offwhite .progress-bar-bg { background: rgba(37,37,37,0.12); }
+  .urgency-label {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 6px;
+    display: block;
+    color: var(--laranja);
+  }
+
+  /* ============================================================
+     MARQUEE / BANNER ANIMADO
+  ============================================================ */
+  .marquee-section {
+    background: var(--offblack);
+    padding: 18px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-section.marquee-orange {
+    background: var(--laranja);
+  }
+  .marquee-track {
+    display: inline-flex;
+    animation: marquee 18s linear infinite;
+  }
+  .marquee-track span {
+    color: var(--offwhite);
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    padding: 0 40px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .marquee-section.marquee-orange .marquee-track span {
+    color: var(--offblack);
+  }
+  .marquee-track span::after {
+    content: ' ✦ ';
+    color: var(--laranja);
+    margin: 0 8px;
+  }
+  .marquee-section.marquee-orange .marquee-track span::after {
+    color: var(--offblack);
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ============================================================
+     STICKY FOOTER
+  ============================================================ */
+  .sticky-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: var(--offblack);
+    height: var(--footer-h);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    box-shadow: 0 -2px 20px rgba(0,0,0,0.3);
+  }
+  .sticky-footer .footer-label {
+    color: var(--offwhite);
+    font-size: 0.82rem;
+    opacity: 0.75;
+  }
+  .sticky-footer .footer-label strong {
+    color: var(--offwhite);
+    opacity: 1;
+    font-size: 0.9rem;
+  }
+  @media (max-width: 600px) {
+    .sticky-footer { padding: 0 16px; }
+    .sticky-footer .footer-label { display: none; }
+  }
+
+  /* ============================================================
+     IMAGE PLACEHOLDERS
+  ============================================================ */
+  .img-placeholder {
+    background: #C8C5BC;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 12px;
+    font-style: italic;
+  }
+
+  /* ============================================================
+     SECTION 1 — HERO
+  ============================================================ */
+  .hero {
+    background: var(--offblack);
+    position: relative;
+    padding: 100px 0 80px;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(37, 37, 37, 0.72);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .hero-content .eyebrow {
+    color: var(--laranja);
+  }
+  .hero-content h1 {
+    margin-bottom: 28px;
+    color: var(--offwhite);
+  }
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--offwhite);
+    max-width: 640px;
+    margin: 0 auto 40px;
+    opacity: 0.82;
+  }
+
+  /* ============================================================
+     SECTION 3 — CANSADA DE SER GENÉRICA
+  ============================================================ */
+  .text-box {
+    background: var(--offwhite-dark);
+    border-radius: 16px;
+    padding: 36px 40px;
+    margin-top: 40px;
+    border-left: 4px solid var(--laranja);
+  }
+  .text-box p { font-size: 1.05rem; line-height: 1.75; }
+
+  /* ============================================================
+     SECTION 4 — COMO RESOLVE
+  ============================================================ */
+  .two-boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 40px;
+  }
+  @media (max-width: 768px) {
+    .two-boxes { grid-template-columns: 1fr; }
+  }
+
+  .checklist-box {
+    border-radius: 20px;
+    padding: 40px 36px;
+  }
+  .checklist-box.dark { background: var(--offblack); color: var(--offwhite); }
+  .checklist-box.orange { background: var(--laranja); color: var(--offwhite); }
+
+  .checklist-box h3 {
+    margin-bottom: 28px;
+    color: inherit;
+  }
+
+  .checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .check-icon, .x-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 900;
+    margin-top: 1px;
+  }
+  .check-icon { background: var(--laranja); color: var(--offwhite); }
+  .checklist-box.orange .check-icon { background: var(--offwhite); color: var(--laranja); }
+  .x-icon { background: var(--offwhite); color: var(--laranja); }
+  .checklist-box.orange .x-icon { background: rgba(255,255,255,0.25); color: var(--offwhite); }
+
+  /* ============================================================
+     SECTION 5 — AGENDA
+  ============================================================ */
+  .day-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 48px;
+  }
+
+  .day-card {
+    background: var(--offblack);
+    color: var(--offwhite);
+    border-radius: 20px;
+    padding: 48px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .day-number {
+    position: absolute;
+    top: 16px;
+    right: 32px;
+    font-size: 10rem;
+    font-weight: 400;
+    font-family: 'Asgard', serif;
+    font-style: normal;
+    color: rgba(255,255,255,0.08);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+  .day-card h3 {
+    color: var(--laranja);
+    font-size: 1.05rem;
+    font-style: normal;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: 'Campeche', sans-serif;
+    margin-bottom: 8px;
+  }
+  .day-subtitle {
+    font-style: italic;
+    opacity: 0.75;
+    margin-bottom: 24px;
+    font-size: 1rem;
+  }
+  .day-divider {
+    border: none;
+    border-top: 1px solid rgba(233, 103, 65, 0.35);
+    margin: 24px 0;
+  }
+  .day-card .checklist li { font-size: 0.92rem; }
+  .day-card .check-icon { background: var(--laranja); }
+  .day-closing {
+    font-weight: 700;
+    margin-top: 8px;
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
+
+  /* ============================================================
+     SECTION 6 — PRICING
+  ============================================================ */
+  .pricing-section {
+    background: var(--offblack);
+    position: relative;
+    overflow: hidden;
+  }
+  .pricing-bg {
+    position: absolute;
+    inset: 0;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pricing-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(37, 37, 37, 0.72);
+  }
+  .pricing-content { position: relative; z-index: 2; text-align: center; }
+  .pricing-content h2 { color: var(--offwhite); margin-bottom: 20px; }
+
+  .pricing-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 24px auto;
+    max-width: 480px;
+    text-align: left;
+  }
+  .pricing-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--offwhite);
+    opacity: 0.75;
+    font-size: 1rem;
+  }
+  .pricing-list li .check-icon { background: var(--laranja); flex-shrink: 0; margin-top: 2px; }
+
+  .pivot-text {
+    font-family: 'Larken', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    color: var(--offwhite);
+    max-width: 640px;
+    margin: 32px auto 40px;
+    line-height: 1.3;
+  }
+
+  .offer-box {
+    background: rgba(255,255,255,0.05);
+    border: 2px solid var(--laranja);
+    border-radius: 24px;
+    padding: 48px 44px;
+    max-width: 520px;
+    margin: 0 auto 32px;
+    text-align: center;
+  }
+  .offer-box h3 {
+    color: var(--offwhite);
+    font-size: 1.5rem;
+    margin-bottom: 28px;
+  }
+  .offer-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 36px;
+    text-align: left;
+  }
+  .offer-tag {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--offwhite);
+    font-size: 0.9rem;
+  }
+  .offer-tag::before {
+    content: '✦';
+    color: var(--laranja);
+    font-size: 0.7rem;
+    flex-shrink: 0;
+  }
+  .price-main {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900;
+    color: var(--offwhite);
+    line-height: 1.1;
+  }
+  .price-sub {
+    font-size: 1rem;
+    color: var(--offwhite);
+    opacity: 0.65;
+    margin-top: 6px;
+  }
+  .price-divider {
+    margin: 20px auto;
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    max-width: 120px;
+  }
+  .btn-detail {
+    font-size: 0.82rem;
+    opacity: 0.65;
+    color: var(--offwhite);
+    margin-bottom: 16px;
+    display: block;
+    font-style: italic;
+  }
+
+  /* ============================================================
+     SECTION 8 — INSTRUTORAS
+  ============================================================ */
+  .instructors { display: flex; flex-direction: column; gap: 28px; margin-top: 48px; }
+
+  .instructor-card {
+    background: var(--offblack);
+    border-radius: 20px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: 420px;
+  }
+  @media (max-width: 640px) {
+    .instructor-card { grid-template-columns: 1fr; }
+    .instructor-photo { height: 380px; }
+  }
+  .instructor-photo {
+    background: #3a3a3a;
+    overflow: hidden;
+    position: relative;
+  }
+  .instructor-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  @media (max-width: 640px) {
+    .instructor-photo img {
+      object-position: top center;
+    }
+  }
+  .instructor-info {
+    padding: 36px 36px 36px 32px;
+    color: var(--offwhite);
+  }
+  .instructor-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--laranja);
+    margin-bottom: 6px;
+    font-style: normal;
+    font-family: 'Campeche', sans-serif;
+  }
+  .instructor-role {
+    font-size: 0.82rem;
+    opacity: 0.6;
+    margin-bottom: 16px;
+    line-height: 1.5;
+    font-style: italic;
+  }
+  .instructor-bio {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    opacity: 0.85;
+  }
+
+  /* ============================================================
+     SECTION 9 — DEPOIMENTOS
+  ============================================================ */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 40px 0;
+  }
+  @media (max-width: 640px) {
+    .testimonials-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .testimonial-card {
+    background: transparent;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .testimonial-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+
+  /* ============================================================
+     SECTION 10 — FAQ
+  ============================================================ */
+  .faq-list { margin-top: 48px; }
+  .faq-item {
+    border-bottom: 1px solid rgba(37,37,37,0.15);
+  }
+  .faq-item:first-child { border-top: 1px solid rgba(37,37,37,0.15); }
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    cursor: pointer;
+    gap: 16px;
+    user-select: none;
+  }
+  .faq-question h4 {
+    font-family: 'Campeche', sans-serif;
+    font-style: normal;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  .faq-icon {
+    width: 28px;
+    height: 28px;
+    border: 2px solid var(--laranja);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--laranja);
+    font-size: 1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    transition: transform 0.25s, background 0.25s;
+  }
+  .faq-item.open .faq-icon {
+    background: var(--laranja);
+    color: var(--offwhite);
+    transform: rotate(45deg);
+  }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.3s ease;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(37,37,37,0.8);
+    padding: 0;
+  }
+  .faq-item.open .faq-answer {
+    max-height: 400px;
+    padding-bottom: 24px;
+  }
+
+  /* ============================================================
+     SECTION 11 — A ESCOLHA FINAL
+  ============================================================ */
+  .choice-section {
+    background: var(--offblack);
+    text-align: center;
+  }
+  .choice-section h2 { color: var(--offwhite); }
+  .choice-body {
+    font-family: 'Larken', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1.3rem, 2.8vw, 2rem);
+    color: var(--offwhite);
+    max-width: 640px;
+    margin: 32px auto 40px;
+    line-height: 1.35;
+  }
+
+  /* ============================================================
+     STATIC FOOTER
+  ============================================================ */
+  .static-footer {
+    background: var(--offblack);
+    padding: 32px 24px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .static-footer p {
+    color: var(--offwhite);
+    opacity: 0.4;
+    font-size: 0.72rem;
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  /* ============================================================
+     RESPONSIVE TWEAKS
+  ============================================================ */
+  /* Quebras condicionais */
+  .br-desktop { display: none; }
+  @media (min-width: 769px) {
+    .br-desktop { display: block; }
+  }
+
+  @media (max-width: 768px) {
+    section { padding: 60px 0; }
+    .text-box { padding: 28px 24px; }
+    .checklist-box { padding: 32px 28px; }
+    .day-card { padding: 36px 28px; }
+    .day-number { font-size: 6rem; right: 16px; top: 10px; }
+    .offer-box { padding: 36px 28px; }
+    .instructor-info { padding: 28px 24px; }
+    .sticky-footer { height: 64px; }
+    :root { --footer-h: 64px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero">
+  <div class="hero-bg" style="background-image:url('assets/vaquinha.png');background-size:cover;background-position:center;"></div>
+  <div class="hero-content">
+    <span class="eyebrow">Ao vivo nos dias 10 e 11 de Julho</span>
+    <h1>Você não precisa de mais<br>ideias de conteúdo.<br>
+    Você precisa parar de ser<br><em>uma cópia cuspida e c@gada</em><br>de todo mundo do seu nicho.</h1>
+    <p class="hero-sub">Em 2 dias, você vai mapear ao vivo a sua marca pessoal,<br>configurar o Claude com a sua voz e transformar<br>o seu posicionamento em uma estratégia de conteúdo prática<br>que converte — sem copiar as mesmas experts genéricas<br>que aparecem no seu explorar toda semana.</p>
+    <a href="https://pay.kiwify.com.br/2AOt47T" target="_blank" class="btn">
+      Quero parar de sofrer pra criar conteúdo
+      <span class="btn-sub">a partir de R$127 &nbsp;•&nbsp; vagas limitadas</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============================================================
+     BANNER ANIMADO 1
+============================================================ -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span>10 e 11 de julho</span>
+    <span>Ao vivo + gravação</span>
+    <span>Claude na prática</span>
+    <span>10 e 11 de julho</span>
+    <span>Ao vivo + gravação</span>
+    <span>Claude na prática</span>
+    <span>10 e 11 de julho</span>
+    <span>Ao vivo + gravação</span>
+    <span>Claude na prática</span>
+    <span>10 e 11 de julho</span>
+    <span>Ao vivo + gravação</span>
+    <span>Claude na prática</span>
+  </div>
+</div>
+
+<!-- ============================================================
+     SEÇÃO 3 — TÁ CANSADA DE SER GENÉRICA
+============================================================ -->
+<section class="section-offwhite">
+  <div class="container">
+    <span class="eyebrow">Tá cansada de ser genérica, né minha filha?</span>
+    <h2>A maioria das pessoas se inspiram<br>no conteúdo dos outros pra gerar post.</h2>
+    <p style="margin-top:20px; font-size:1.1rem; opacity:0.75; max-width:640px;">
+      Salvam, adaptam e postam — mas o resultado nunca chega porque o conteúdo é genérico. Ele poderia ter sido publicado por qualquer outra pessoa do seu nicho…
+    </p>
+    <div class="text-box">
+      <p><strong>Preciso te dizer que não te falta ideia, nem consistência!!!!!</strong></p>
+      <p>O buraco <span class="highlight">{ou o rombo}</span> é bem mais embaixo: você está criando conteúdo sem uma <strong>lógica própria de posicionamento</strong>. Aí tanto faz se você usa ChatGPT, Claude ou escreve à mão às duas da manhã, o resultado continua parecendo o conteúdo de alguém tentando acertar o algoritmo, e não construir um negócio com <strong>autoridade, previsibilidade e conversão em vendas.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SEÇÃO 4 — QUER SABER COMO RESOLVE?
+============================================================ -->
+<section class="section-offwhite" style="padding-top:0;">
+  <div class="container">
+    <span class="eyebrow">Quer saber como que resolve?</span>
+    <h2>O que vamos te ensinar aqui<br>é diferente de tudo que você já viu.</h2>
+    <p style="margin-top:20px; font-size:1.05rem; opacity:0.75; max-width:600px;">
+      Você vai aprender a usar o Claude como ferramenta estratégica da sua marca pessoal para criar um conteúdo decente {que te faz vender}
+    </p>
+
+    <div class="two-boxes">
+      <!-- O QUE VAI APRENDER -->
+      <div class="checklist-box dark">
+        <h3>O que você vai aprender</h3>
+        <ul class="checklist">
+          <li><span class="check-icon">✓</span><span>Prompts configurados com a sua voz, sua oferta e seu jeitinho único de explicar</span></li>
+          <li><span class="check-icon">✓</span><span>Construir a base de um posicionamento claro que te <span class="highlight">diferencia</span> desse bando de marmota genérica</span></li>
+          <li><span class="check-icon">✓</span><span>Construir uma linha editorial <span class="highlight">que presta</span>, com pilares que sustentam o objetivo do seu negócio</span></li>
+          <li><span class="check-icon">✓</span><span>Posts que funcionam como uma engrenagem de venda para o seu serviço (sem vc parecer uma pedinte)</span></li>
+          <li><span class="check-icon">✓</span><span>Criar um banco de referências que alimenta seu repertório e te faz produzir <span class="highlight">conteúdos interessantes e boazudos</span></span></li>
+          <li><span class="check-icon">✓</span><span>Acesso aos novos funis que usamos {topo, meio e fundo já foi de arrasta viu, minha filha?} pra criar conteúdos independentes, que geram leads qualificados sem ficar pagando de palhaça na internet</span></li>
+          <li><span class="check-icon">✓</span><span>Skills e ferramentas para usar o Claude pra <span class="highlight">automatizar e acelerar</span> a produção de conteúdo {mas sem robotizar o trabalho que é seu}</span></li>
+        </ul>
+      </div>
+
+      <!-- O QUE VAI DEIXAR PRA TRÁS -->
+      <div class="checklist-box orange">
+        <h3>O que você vai deixar pra trás</h3>
+        <ul class="checklist">
+          <li><span class="x-icon">✕</span><span><strong>Conteúdos fubangos</strong> que te colocam como "mais uma" no meio de um exército de clones</span></li>
+          <li><span class="x-icon">✕</span><span>Cópias mal adaptadas de outros conteúdos que são cópias mal adaptadas de outros conteúdos…</span></li>
+          <li><span class="x-icon">✕</span><span>Conteúdo que "fica bonito" mas não constrói autoridade</span></li>
+          <li><span class="x-icon">✕</span><span>IA gerando post que todo mundo sabe que foi ela que escreveu</span></li>
+          <li><span class="x-icon">✕</span><span>Performar uma personagem na internet que não é você {deixa de ser falsa, menina}</span></li>
+          <li><span class="x-icon">✕</span><span>Depender de inspiração pra conseguir postar</span></li>
+          <li><span class="x-icon">✕</span><span>Criar sem saber se aquilo ajuda a vender alguma coisa</span></li>
+          <li><span class="x-icon">✕</span><span>Perder tempo criando conteúdo que (de novo, pela MILÉSIMA VEZ!!!) não te leva a lugar nenhum</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:48px;">
+      <a href="https://pay.kiwify.com.br/2AOt47T" target="_blank" class="btn btn-center">
+        Putz, é isso que eu preciso
+      </a>
+      <div class="urgency-wrap">
+        <div class="progress-bar-bg" style="background:rgba(37,37,37,0.12);">
+          <div class="progress-bar-fill"></div>
+        </div>
+        <span class="urgency-label">Vagas limitadas SE MEXEEEE</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SEÇÃO 5 — AGENDA
+============================================================ -->
+<section class="section-offwhite" style="background: var(--offwhite-dark);">
+  <div class="container">
+    <span class="eyebrow">Os tópicos a serem abordados</span>
+    <h2>Dois dias para transformar<br>como você cria conteúdo.</h2>
+    <p style="margin-top:20px; font-size:1.05rem; opacity:0.75; max-width:640px;">
+      Cada dia foi desenhado para te trazer um resultado concreto dentro de uma sequência de evolução. Nós não vamos trazer só conhecimento teórico — você vai entrar no workshop pra <span class="highlight">meter a mão na massa</span> e já sair com algo extremamente útil em mãos.
+    </p>
+
+    <div class="day-cards">
+      <!-- DIA 1 -->
+      <div class="day-card">
+        <div class="day-number">01</div>
+        <h3>Dia 1: Marca Pessoal + Posicionamento</h3>
+        <p class="day-subtitle">Você vai mapear quem você é, e transformar isso em estratégia.</p>
+        <hr class="day-divider">
+        <ul class="checklist">
+          <li><span class="check-icon">✓</span><span>seus melhores atributos e pontos de holofote</span></li>
+          <li><span class="check-icon">✓</span><span>como usar arquétipos do jeito certo {sem vc ficar rotulada e engessada, pelo amor de deus}</span></li>
+          <li><span class="check-icon">✓</span><span>suas ideias fortes e argumentos de autoridade</span></li>
+          <li><span class="check-icon">✓</span><span>sua visão de mercado, o que você defende e o que você abomina</span></li>
+          <li><span class="check-icon">✓</span><span>seu público e seu anti-público</span></li>
+          <li><span class="check-icon">✓</span><span>seus temas centrais, os assuntos que só você fala do jeito que você fala</span></li>
+          <li><span class="check-icon">✓</span><span>seus diferenciais reais, não os que você inventou pra parecer diferentona</span></li>
+          <li><span class="check-icon">✓</span><span>sua voz e como ela se destaca no mercado</span></li>
+          <li><span class="check-icon">✓</span><span>os tipos de conteúdo que sustentam a sua autoridade a longo prazo</span></li>
+        </ul>
+        <hr class="day-divider">
+        <p class="day-closing">Aqui você para de criar conteúdo baseado no que "performa" pra todo mundo, e começa a criar com base no que faz sentido pra marca que você realmente quer construir.</p>
+      </div>
+
+      <!-- DIA 2 -->
+      <div class="day-card">
+        <div class="day-number">02</div>
+        <h3>Dia 2: Claude + Estratégia de Conteúdo</h3>
+        <p class="day-subtitle">Você vai aprender a usar o Claude como extensão da sua marca.</p>
+        <hr class="day-divider">
+        <ul class="checklist">
+          <li><span class="check-icon">✓</span><span>seu posicionamento transformado em uma linha editorial prática</span></li>
+          <li><span class="check-icon">✓</span><span>organização de temas, argumentos e formatos em uma lógica sustentável</span></li>
+          <li><span class="check-icon">✓</span><span>como usar o Claude para pesquisar e catalogar referências realmente úteis</span></li>
+          <li><span class="check-icon">✓</span><span>como criar um projeto funcional e estratégico para automatizar sua produção de conteúdo no dia a dia (sem virar uma fábrica de posts de IA)</span></li>
+          <li><span class="check-icon">✓</span><span>prompts estratégicos mapeados para a sua voz e público</span></li>
+          <li><span class="check-icon">✓</span><span>como criar um banco de histórias pessoais que vai dar corpo e personalidade pra todos os seus conteúdos</span></li>
+          <li><span class="check-icon">✓</span><span>como criar skills dentro das suas necessidades, que tornam sua produção de conteúdo funcional e não atrapalham seu fluxo de trabalho</span></li>
+          <li><span class="check-icon">✓</span><span>conteúdo que traz leads qualificados sem soar artificial ou forçado (bora parar de mendigar 💀🤚🏻)</span></li>
+          <li><span class="check-icon">✓</span><span>como usar IA para acelerar, e não substituir, sua cabeça criativa</span></li>
+        </ul>
+        <hr class="day-divider">
+        <p class="day-closing">No fim, você sai com uma lógica prática, prompts próprios, uma estrutura pronta no notion e clareza para continuar criando sozinha, sem depender de ninguém.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SEÇÃO 6 — PRICING
+============================================================ -->
+<section class="pricing-section">
+  <div class="pricing-bg" style="background-image:url('assets/vaquinha.png');background-size:cover;background-position:center;"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="pricing-content">
+      <h2>Você pode continuar:</h2>
+      <ul class="pricing-list">
+        <li><span class="check-icon" style="background:rgba(233,103,65,0.3);color:var(--laranja);">→</span><span>salvando conteúdo dos outros e tentando adaptar</span></li>
+        <li><span class="check-icon" style="background:rgba(233,103,65,0.3);color:var(--laranja);">→</span><span>reescrevendo legenda genérica de IA</span></li>
+        <li><span class="check-icon" style="background:rgba(233,103,65,0.3);color:var(--laranja);">→</span><span>postando sem saber se aquilo realmente ajuda a vender</span></li>
+        <li><span class="check-icon" style="background:rgba(233,103,65,0.3);color:var(--laranja);">→</span><span>ou criando conteúdo que qualquer concorrente poderia publicar</span></li>
+      </ul>
+
+      <p class="pivot-text">Ou pode finalmente aprender a construir<br>uma estratégia de conteúdo com IA<br>que parece sua.</p>
+
+      <div class="offer-box">
+        <h3>Claudificando seu Conteúdo</h3>
+        <div class="offer-tags">
+          <div class="offer-tag">2 dias de imersão ao vivo</div>
+          <div class="offer-tag">10 e 11 de Julho, das 9h às 16h</div>
+          <div class="offer-tag">Acesso ao grupo da imersão no WhatsApp</div>
+          <div class="offer-tag">Notion com workbook, instruções e prompts</div>
+        </div>
+        <hr class="price-divider">
+        <p class="price-main">12x R$13,14</p>
+        <p class="price-sub">ou R$127,00 à vista</p>
+        <hr class="price-divider">
+        <span class="btn-detail">Você está a um clique de parar de criar<br>(coisas feiosas &amp; fubangas) no escuro.</span>
+        <a href="https://pay.kiwify.com.br/2AOt47T" target="_blank" class="btn btn-block">
+          Quero garantir minha vaga
+        </a>
+        <div class="urgency-wrap">
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill"></div>
+          </div>
+          <span class="urgency-label" style="color:var(--offwhite);opacity:0.5;">Vagas limitadas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BANNER ANIMADO 2
+============================================================ -->
+<div class="marquee-section marquee-orange">
+  <div class="marquee-track">
+    <span>10 e 11 de julho</span>
+    <span>Ao vivo + gravação</span>
+    <span>Claude na prática</span>
+    <span>10 e 11 de julho</span>
+    <span>Ao vivo + gravação</span>
+    <span>Claude na prática</span>
+    <span>10 e 11 de julho</span>
+    <span>Ao vivo + gravação</span>
+    <span>Claude na prática</span>
+    <span>10 e 11 de julho</span>
+    <span>Ao vivo + gravação</span>
+    <span>Claude na prática</span>
+  </div>
+</div>
+
+<!-- ============================================================
+     SEÇÃO 8 — INSTRUTORAS
+============================================================ -->
+<section class="section-offwhite">
+  <div class="container">
+    <span class="eyebrow">Quem vai te guiar</span>
+    <h2>Duas pessoas que vivem<br>o que ensinam</h2>
+    <p style="margin-top:20px; font-size:1.05rem; opacity:0.75; max-width:600px;">
+      Uma estrategista de posicionamento e uma estrategista de conteúdo<span class="br-desktop"></span> se uniram para entregar o que nenhum outro workshop de Claude conseguiu: profundidade estratégica.
+    </p>
+
+    <div class="instructors">
+      <!-- LUD -->
+      <div class="instructor-card">
+        <div class="instructor-photo"><img src="assets/imgs/lud.jpg" alt="Lud Araujo"></div>
+        <div class="instructor-info">
+          <p class="instructor-name">Lud Araujo | @aludaraujo</p>
+          <p class="instructor-role">Designer | Consultora de Imagem | Especialista em Branding | Mentora de posicionamento | Fundadora do @studiopropositum</p>
+          <p class="instructor-bio">Sou uma Engenheira que direcionou o seu pensamento lógico e sistêmico por uma transição de carreira para o universo criativo. Nos últimos 6 anos já foram mais de 500 imagens pessoais transformadas, mais de 80 marcas criadas e mais de 20 mulheres mentoradas. Eu acredito em extrair e alinhar a sua essência ao seu mercado e aos seus objetivos de longo prazo, para que o resultado seja uma estratégia profunda e longeva que vai te aproximar dos seus sonhos de verdade.</p>
+        </div>
+      </div>
+
+      <!-- LET -->
+      <div class="instructor-card">
+        <div class="instructor-photo"><img src="assets/imgs/let.jpg" alt="Let Milani"></div>
+        <div class="instructor-info">
+          <p class="instructor-name">Let Milani | @leticialmilani</p>
+          <p class="instructor-role">Jornalista | Estrategista de Conteúdo | Especialista em Planejamento de Conteúdo baseado em Dados</p>
+          <p class="instructor-bio">Sou formada em Jornalismo e especializada em Branding Pessoal e Conteúdo Estratégico. Nos últimos 8 anos, ajudei marcas pessoais a se posicionarem no digital com consistência e com resultados reais. Porque sim, likes não pagam boletos. Meu foco é alinhar sua comunicação com o que você quer alcançar no seu negócio, do feed ao faturamento.<br><br>Depois de muito tempo resistindo à IA, aprendi a usar o Claude pra otimizar os meus processos de conteúdo e otimizar o meu tempo e da minha equipe, produzindo conteúdos assertivos e autênticos, e o melhor: com zero cara de IA. É isso que vou te ensinar na prática.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SEÇÃO 9 — DEPOIMENTOS
+============================================================ -->
+<section class="section-offwhite" style="background: var(--offwhite-dark); background-image: url('assets/vaquinha.png'); background-size: cover; background-position: center; background-blend-mode: multiply; position: relative;">
+  <div style="position:absolute;inset:0;background:rgba(240,238,229,0.88);z-index:0;"></div>
+  <div class="container-wide" style="position:relative;z-index:1;">
+    <span class="eyebrow">Resultados reais</span>
+    <h2>Quem já acessou os nossos conhecimentos</h2>
+    <p style="margin-top:16px; opacity:0.7; max-width:560px;">Depoimentos sobre a metodologia e resultados de conteúdos gerados seguindo a metodologia que iremos apresentar no workshop</p>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card"><img src="assets/imgs/dep1.jpg" alt="Depoimento 1"></div>
+      <div class="testimonial-card"><img src="assets/imgs/dep2.jpg" alt="Depoimento 2"></div>
+      <div class="testimonial-card"><img src="assets/imgs/dep3.jpg" alt="Depoimento 3"></div>
+      <div class="testimonial-card"><img src="assets/imgs/dep4.jpg" alt="Depoimento 4"></div>
+      <div class="testimonial-card"><img src="assets/imgs/dep5.jpg" alt="Depoimento 5"></div>
+    </div>
+
+    <div style="text-align:center;">
+      <a href="https://pay.kiwify.com.br/2AOt47T" target="_blank" class="btn btn-center">
+        Quero criar conteúdos que tragam resultado
+      </a>
+      <div class="urgency-wrap">
+        <div class="progress-bar-bg" style="background:rgba(37,37,37,0.12);">
+          <div class="progress-bar-fill"></div>
+        </div>
+        <span class="urgency-label">Vagas limitadas</span>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SEÇÃO 10 — FAQ
+============================================================ -->
+<section class="section-offwhite">
+  <div class="container">
+    <span class="eyebrow">Perguntas frequentes</span>
+    <h2>Pra sanar toda e qualquer dúvida</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h4>Quando acontece o workshop e como funciona o formato?</h4>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">O workshop acontece nos dias <strong>10 e 11 de julho</strong>, ao vivo, das 09h às 16h, com pausa de 1h para o almoço. Cada dia tem uma proposta diferente: o Dia 1 foca em marca pessoal e posicionamento, e o Dia 2 em como usar o Claude de forma estratégica na sua produção de conteúdo. As sessões são transmitidas online, você precisa apenas de internet e de um computador com acesso ao Claude Cowork para participar.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h4>Vou ter acesso à gravação se não puder participar ao vivo?</h4>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">Se você escolher o plano <strong>Ao vivo (R$127) + gravação (R$40)</strong>, você terá acesso à gravação completa das duas sessões. Assim você pode assistir no seu ritmo, pausar, rever quantas vezes quiser durante o período de 6 meses. Se você comprar apenas o plano "ao vivo" (R$127), a gravação não estará incluída.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h4>Preciso ter experiência com o Claude ou com IA para participar?</h4>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">Não. O workshop foi desenhado para funcionar mesmo que você nunca tenha usado o Claude na vida. Você vai aprender a usar a ferramenta do zero, com foco em estratégia, não em tecnologia. Se você já usa o Claude, vai sair com uma lógica muito mais sofisticada do que provavelmente usa hoje. Se você ainda não usa, vai precisar baixar ele no seu computador e assinar o Plano Pro que te dá acesso ao "Claude Cowork".</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h4>O que preciso ter instalado ou preparado antes do workshop?</h4>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">Você vai precisar de uma conta no Claude com assinatura do Plano Pro. Após a confirmação da compra, enviaremos um material de preparação com tudo que você precisa configurar antes do Dia 1. É simples e não leva mais de 10 minutos.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h4>Esse workshop serve para qualquer nicho ou é só para um público específico?</h4>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">Serve para qualquer profissional que vende através da sua marca pessoal, sejam mentorias, serviços, infoprodutos ou consultorias. A metodologia é sobre <strong>posicionamento</strong>, não sobre um nicho específico. Já foi aplicada com sucesso em nutricionistas, designers, advogadas, terapeutas, consultoras e criadoras de conteúdo.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h4>Vou conseguir resultados logo depois do workshop?</h4>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">Sim, e esse é exatamente o ponto. O workshop é desenhado para ser prático, não teórico. Você vai sair com prompts prontos, pilares definidos e uma lógica de conteúdo mapeada. Isso significa que você pode começar a criar de forma estratégica já <strong>no dia seguinte</strong>.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SEÇÃO 11 — A ESCOLHA FINAL
+============================================================ -->
+<section class="choice-section">
+  <div class="container" style="text-align:center;">
+    <span class="eyebrow" style="color:var(--laranja);">A Escolha</span>
+    <h2>Você pode continuar como está.</h2>
+    <p class="choice-body">Ou você pode finalmente aprender a criar<br>conteúdo que parece seu, posiciona sua marca<br>e vende — com uma ferramenta<br>que amplifica quem você já é.</p>
+    <a href="https://pay.kiwify.com.br/2AOt47T" target="_blank" class="btn btn-center">
+      Quero garantir a minha vaga
+    </a>
+    <div class="urgency-wrap">
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill"></div>
+      </div>
+      <span class="urgency-label" style="color:var(--offwhite);opacity:0.5;">Vagas limitadas</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BANNER ANIMADO 3
+============================================================ -->
+<div class="marquee-section marquee-orange">
+  <div class="marquee-track">
+    <span>10 e 11 de julho</span>
+    <span>Ao vivo + gravação</span>
+    <span>Claude na prática</span>
+    <span>10 e 11 de julho</span>
+    <span>Ao vivo + gravação</span>
+    <span>Claude na prática</span>
+    <span>10 e 11 de julho</span>
+    <span>Ao vivo + gravação</span>
+    <span>Claude na prática</span>
+    <span>10 e 11 de julho</span>
+    <span>Ao vivo + gravação</span>
+    <span>Claude na prática</span>
+  </div>
+</div>
+
+<!-- ============================================================
+     RODAPÉ ESTÁTICO
+============================================================ -->
+<footer class="static-footer">
+  <p>Todos os direitos reservados ©<br>
+  Studio Propositum LTDA ®<br>
+  CNPJ 46.934.525/0001-03</p>
+</footer>
+
+<!-- ============================================================
+     STICKY FOOTER
+============================================================ -->
+<div class="sticky-footer">
+  <div class="footer-label">
+    <strong>Claudificando seu Conteúdo</strong> &nbsp;·&nbsp; 10 e 11 de julho &nbsp;·&nbsp; Workshop ao vivo + gravação
+  </div>
+  <a href="https://pay.kiwify.com.br/2AOt47T" target="_blank" class="btn" style="padding:12px 28px;font-size:0.9rem;">
+    Garantir vaga
+  </a>
+</div>
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+  function toggleFaq(questionEl) {
+    const item = questionEl.parentElement;
+    const isOpen = item.classList.contains('open');
+    // fecha todos
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    // abre o clicado (se estava fechado)
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Intersection Observer para animar barras de progresso quando entram na tela
+  const bars = document.querySelectorAll('.progress-bar-fill');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+      }
+    });
+  }, { threshold: 0.5 });
+  bars.forEach(bar => {
+    bar.style.animationPlayState = 'paused';
+    observer.observe(bar);
+  });
+</script>
+
+</body>
+</html>
