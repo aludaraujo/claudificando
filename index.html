@@ -672,7 +672,12 @@
     margin: 40px 0;
   }
   @media (max-width: 640px) {
-    .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .testimonial-card:nth-child(1) { grid-column: 1; grid-row: 1; }
+    .testimonial-card:nth-child(2) { grid-column: 2; grid-row: 1; }
+    .testimonial-card:nth-child(3) { grid-column: 2; grid-row: 2; }
+    .testimonial-card:nth-child(4) { grid-column: 1; grid-row: 2; }
+    .testimonial-card:nth-child(5) { grid-column: 2; grid-row: 3; }
   }
   .testimonial-card {
     background: transparent;
@@ -790,6 +795,10 @@
   @media (min-width: 769px) {
     .br-desktop { display: block; }
   }
+  .br-mobile { display: none; }
+  @media (max-width: 768px) {
+    .br-mobile { display: block; }
+  }
 
   @media (max-width: 768px) {
     section { padding: 60px 0; }
@@ -813,7 +822,7 @@
   <div class="hero-bg" style="background-image:url('assets/vaquinha.png');background-size:cover;background-position:center;"></div>
   <div class="hero-content">
     <span class="eyebrow">Ao vivo nos dias 10 e 11 de Julho</span>
-    <h1>Você não precisa de mais ideias de conteúdo. Você precisa parar de ser <em>uma cópia cuspida e c@gada</em> de todo mundo do seu nicho.</h1>
+    <h1>Você não precisa<span class="br-mobile"></span> de mais ideias de conteúdo. Você precisa parar de ser <em>uma cópia cuspida e c@gada</em> de todo mundo do seu nicho.</h1>
     <p class="hero-sub">Em 2 dias, você vai mapear ao vivo a sua marca pessoal, configurar o Claude com a sua voz e transformar o seu posicionamento em uma estratégia de conteúdo prática que converte — sem copiar as mesmas experts genéricas que aparecem no seu explorar toda semana.</p>
     <a href="https://pay.kiwify.com.br/2AOt47T" target="_blank" class="btn">
       Quero parar de sofrer pra criar conteúdo
@@ -865,7 +874,7 @@
 <section class="section-offwhite" style="padding-top:0;">
   <div class="container">
     <span class="eyebrow">Quer saber como que resolve?</span>
-    <h2>O que vamos te ensinar aqui é diferente de tudo que você já viu.</h2>
+    <h2>O que vamos te ensinar<span class="br-mobile"></span> aqui é diferente de tudo que<span class="br-mobile"></span> você já viu.</h2>
     <p style="margin-top:20px; font-size:1.05rem; opacity:0.75; max-width:600px;">
       Você vai aprender a usar o Claude como ferramenta estratégica da sua marca pessoal para criar um conteúdo decente {que te faz vender}
     </p>
@@ -990,7 +999,7 @@
       <p class="pivot-text">Ou pode finalmente aprender a construir uma estratégia de conteúdo com IA que parece sua.</p>
 
       <div class="offer-box">
-        <h3>Claudificando seu Conteúdo</h3>
+        <h3>Claudificando<span class="br-mobile"></span> seu Conteúdo</h3>
         <div class="offer-tags">
           <div class="offer-tag">2 dias de imersão ao vivo</div>
           <div class="offer-tag">10 e 11 de Julho, das 9h às 16h</div>
@@ -1042,7 +1051,7 @@
 <section class="section-offwhite">
   <div class="container">
     <span class="eyebrow">Quem vai te guiar</span>
-    <h2>Duas pessoas que vivem o que ensinam</h2>
+    <h2>Duas pessoas que vivem<span class="br-mobile"></span> o que ensinam</h2>
     <p style="margin-top:20px; font-size:1.05rem; opacity:0.75; max-width:600px;">
       Uma estrategista de posicionamento e uma estrategista de conteúdo<span class="br-desktop"></span> se uniram para entregar o que nenhum outro workshop de Claude conseguiu: profundidade estratégica.
     </p>
@@ -1078,7 +1087,7 @@
   <div style="position:absolute;inset:0;background:rgba(240,238,229,0.88);z-index:0;"></div>
   <div class="container-wide" style="position:relative;z-index:1;">
     <span class="eyebrow">Resultados reais</span>
-    <h2>Quem já acessou os nossos conhecimentos</h2>
+    <h2>Quem já acessou os<span class="br-mobile"></span> nossos conhecimentos</h2>
     <p style="margin-top:16px; opacity:0.7; max-width:560px;">Depoimentos sobre a metodologia e resultados de conteúdos gerados seguindo a metodologia que iremos apresentar no workshop</p>
 
     <div class="testimonials-grid">
@@ -1110,7 +1119,7 @@
 <section class="section-offwhite">
   <div class="container">
     <span class="eyebrow">Perguntas frequentes</span>
-    <h2>Pra sanar toda e qualquer dúvida</h2>
+    <h2>Pra sanar toda e<span class="br-mobile"></span> qualquer dúvida</h2>
 
     <div class="faq-list">
 
@@ -1172,7 +1181,7 @@
 <section class="choice-section">
   <div class="container" style="text-align:center;">
     <span class="eyebrow" style="color:var(--laranja);">A Escolha</span>
-    <h2>Você pode continuar como está.</h2>
+    <h2>Você pode continuar<span class="br-mobile"></span> como está.</h2>
     <p class="choice-body">Ou você pode finalmente aprender a criar conteúdo que parece seu, posiciona sua marca e vende — com uma ferramenta que amplifica quem você já é.</p>
     <a href="https://pay.kiwify.com.br/2AOt47T" target="_blank" class="btn btn-center">
       Quero garantir a minha vaga
