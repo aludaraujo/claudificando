@@ -672,13 +672,24 @@
     margin: 40px 0;
   }
   @media (max-width: 640px) {
-    .testimonials-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-    .testimonial-card:nth-child(1) { grid-column: 1; grid-row: 1; }
-    .testimonial-card:nth-child(2) { grid-column: 2; grid-row: 1; }
-    .testimonial-card:nth-child(3) { grid-column: 1; grid-row: 2; }
-    .testimonial-card:nth-child(4) { grid-column: 2; grid-row: 2; }
-    .testimonial-card:nth-child(5) { grid-column: 2; grid-row: 3; }
+    .testimonials-grid {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .testimonials-col {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+    /* Esconde o grid normal no mobile */
+    .testimonials-grid > .testimonial-card { display: none; }
   }
+  /* Colunas mobile ficam ocultas no desktop */
+  .testimonials-col { display: none; }
+
   .testimonial-card {
     background: transparent;
     border-radius: 12px;
@@ -1096,11 +1107,22 @@
     <p style="margin-top:16px; opacity:0.7; max-width:560px;">Depoimentos sobre a metodologia e resultados de conteúdos gerados seguindo a metodologia que iremos apresentar no workshop</p>
 
     <div class="testimonials-grid">
+      <!-- Desktop: cards normais no grid 3 colunas -->
       <div class="testimonial-card"><img src="assets/imgs/dep1.jpg" alt="Depoimento 1"></div>
       <div class="testimonial-card"><img src="assets/imgs/dep2.jpg" alt="Depoimento 2"></div>
       <div class="testimonial-card"><img src="assets/imgs/dep3.jpg" alt="Depoimento 3"></div>
       <div class="testimonial-card"><img src="assets/imgs/dep4.jpg" alt="Depoimento 4"></div>
       <div class="testimonial-card"><img src="assets/imgs/dep5.jpg" alt="Depoimento 5"></div>
+      <!-- Mobile: duas colunas flex independentes -->
+      <div class="testimonials-col">
+        <div class="testimonial-card"><img src="assets/imgs/dep1.jpg" alt="Depoimento 1"></div>
+        <div class="testimonial-card"><img src="assets/imgs/dep3.jpg" alt="Depoimento 3"></div>
+      </div>
+      <div class="testimonials-col">
+        <div class="testimonial-card"><img src="assets/imgs/dep2.jpg" alt="Depoimento 2"></div>
+        <div class="testimonial-card"><img src="assets/imgs/dep4.jpg" alt="Depoimento 4"></div>
+        <div class="testimonial-card"><img src="assets/imgs/dep5.jpg" alt="Depoimento 5"></div>
+      </div>
     </div>
 
     <div style="text-align:center;">
