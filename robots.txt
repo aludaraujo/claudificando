@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow:
+
+Sitemap: https://claudificando.com.br/sitemap.xml
+
+# Permita indexação rápida
+User-agent: Googlebot
+Crawl-delay: 0
+
+# Permita buscadores comuns
+User-agent: Bingbot
+Crawl-delay: 1
