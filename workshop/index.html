@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Claudificando seu Conteúdo — Workshop 10 e 11 de Julho</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claudificando seu conteúdo — Workshop ao vivo · 10 e 11 de julho</title>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -21,1319 +21,589 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=781489356029096&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-<meta name="description" content="Workshop ao vivo para quem vende pela própria marca. Crie conteúdo que vende usando o Claude, sem soar genérico e sem cara de IA. 10 e 11 de julho.">
-<meta name="keywords" content="Claude, IA, conteúdo, marketing, workshop, marca pessoal, estratégia de conteúdo">
-<meta name="author" content="Studio Propositum LTDA">
+<meta name="description" content="Crie conteúdo que vende usando o Claude, sem soar genérico e sem cara de IA. Workshop ao vivo 10-11 de julho.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://claudificando.com.br/workshop">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Claudificando seu Conteúdo — Workshop com Claude">
-<meta property="og:description" content="Crie conteúdo que vende usando o Claude, sem soar genérico e sem cara de IA. Workshop ao vivo 10-11 de julho.">
+<meta property="og:title" content="Claudificando seu Conteúdo — Workshop ao vivo">
+<meta property="og:description" content="Crie conteúdo que vende usando o Claude. 2 dias ao vivo, 10 e 11 de julho.">
 <meta property="og:url" content="https://claudificando.com.br/workshop">
-<meta property="og:site_name" content="Claudificando seu Conteúdo">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Claudificando seu Conteúdo — Workshop com Claude">
-<meta name="twitter:description" content="Crie conteúdo que vende usando o Claude, sem soar genérico e sem cara de IA. 10-11 de julho.">
 <style>
-  /* ============================================================
-     FONTES CUSTOMIZADAS
-  ============================================================ */
-  @font-face {
-    font-family: 'Larken';
-    src: url('../assets/fonts/Larken-RegularItalic.otf') format('opentype');
-    font-weight: 400;
-    font-style: italic;
-  }
-  @font-face {
-    font-family: 'Larken';
-    src: url('../assets/fonts/Larken-MediumItalic.otf') format('opentype');
-    font-weight: 500;
-    font-style: italic;
-  }
-  @font-face {
-    font-family: 'Larken';
-    src: url('../assets/fonts/Larken-BoldItalic.otf') format('opentype');
-    font-weight: 700;
-    font-style: italic;
-  }
-  @font-face {
-    font-family: 'Campeche';
-    src: url('../assets/fonts/Campeche-Regular.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'Campeche';
-    src: url('../assets/fonts/Campeche-SemiBold.otf') format('opentype');
-    font-weight: 600;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'Campeche';
-    src: url('../assets/fonts/Campeche-Bold.otf') format('opentype');
-    font-weight: 700;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'Asgard';
-    src: url('../assets/fonts/Asgard.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'FaracoHand';
-    src: url('../assets/fonts/FaracoHand.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-  }
-  /* ============================================================
-     RESET & BASE
-  ============================================================ */
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ---------- FONTES ---------- */
+@font-face{font-family:"Campeche";src:url("fonts/Campeche-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Campeche";src:url("fonts/Campeche-Black.otf") format("opentype");font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:"CampecheCn";src:url("fonts/Campeche-CnExtraLight.otf") format("opentype");font-weight:200;font-style:normal;font-display:swap}
+@font-face{font-family:"CampecheCn";src:url("fonts/Campeche-CnBold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Larken";src:url("fonts/Larken-RegularItalic.otf") format("opentype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Larken";src:url("fonts/Larken-BoldItalic.ttf") format("truetype");font-weight:700;font-style:italic;font-display:swap}
+@font-face{font-family:"Asgard";src:url("fonts/Asgard.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Uertas";src:url("fonts/Uertas.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
 
-  :root {
-    --laranja: #E96741;
-    --offwhite: #F0EEE5;
-    --offblack: #252525;
-    --offwhite-dark: #E2DFD5;
-    --footer-h: 72px;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--offwhite);
-    color: var(--offblack);
-    font-family: 'Campeche', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    padding-bottom: var(--footer-h);
-  }
-
-  /* ============================================================
-     TYPOGRAPHY
-  ============================================================ */
-  .font-title {
-    font-family: 'Larken', 'Georgia', 'Times New Roman', serif;
-    font-style: italic;
-  }
-
-  .font-hand {
-    font-family: 'Faraco Hand', 'Dancing Script', cursive;
-  }
-
-  .eyebrow {
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: var(--laranja);
-    display: block;
-    margin-bottom: 16px;
-  }
-
-  .eyebrow-white { color: var(--offwhite); }
-
-  h1, h2, h3 {
-    font-family: 'Larken', serif;
-    font-style: italic;
-    line-height: 1.2;
-  }
-
-  .eyebrow, .section-label-caps {
-    font-family: 'Campeche', sans-serif;
-    font-weight: 700;
-  }
-
-  .hand {
-    font-family: 'FaracoHand', cursive;
-    font-style: normal;
-  }
-
-  h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-  h2 { font-size: clamp(1.6rem, 3.5vw, 2.6rem); }
-  h3 { font-size: clamp(1.2rem, 2.5vw, 1.8rem); }
-
-  p { margin-bottom: 1em; }
-  p:last-child { margin-bottom: 0; }
-
-  .highlight { color: var(--laranja); }
-  .text-white { color: var(--offwhite); }
-
-  /* ============================================================
-     BUTTONS
-  ============================================================ */
-  .btn {
-    display: inline-block;
-    background: var(--laranja);
-    color: var(--offwhite);
-    border: none;
-    border-radius: 50px;
-    padding: 18px 36px;
-    font-size: 1rem;
-    font-weight: 700;
-    text-decoration: none;
-    cursor: pointer;
-    text-align: center;
-    transition: opacity 0.2s, transform 0.15s;
-    line-height: 1.3;
-  }
-  .btn:hover { opacity: 0.88; transform: translateY(-2px); }
-  .btn .btn-sub {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 400;
-    margin-top: 4px;
-    opacity: 0.88;
-  }
-  .btn-outline {
-    background: transparent;
-    border: 2px solid var(--laranja);
-    color: var(--laranja);
-  }
-  .btn-white {
-    background: var(--offwhite);
-    color: var(--laranja);
-  }
-  .btn-block { display: block; width: 100%; }
-  .btn-center { display: block; width: fit-content; margin: 0 auto; }
-
-  /* ============================================================
-     LAYOUT HELPERS
-  ============================================================ */
-  .container {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-  .container-wide {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  section { padding: 80px 0; }
-  section.tight { padding: 56px 0; }
-
-  .section-dark { background: var(--offblack); }
-  .section-offwhite { background: var(--offwhite); }
-
-  /* ============================================================
-     PROGRESS BAR
-  ============================================================ */
-  .urgency-wrap {
-    text-align: center;
-    margin-top: 24px;
-  }
-  .progress-bar-bg {
-    background: rgba(255,255,255,0.15);
-    border-radius: 50px;
-    height: 10px;
-    width: 100%;
-    max-width: 320px;
-    margin: 8px auto;
-    overflow: hidden;
-  }
-  .progress-bar-fill {
-    background: var(--laranja);
-    height: 100%;
-    border-radius: 50px;
-    animation: fillbar 2.5s ease-out forwards;
-    width: 0%;
-  }
-  @keyframes fillbar {
-    to { width: 73%; }
-  }
-  .section-dark .progress-bar-bg { background: rgba(255,255,255,0.12); }
-  .section-offwhite .progress-bar-bg { background: rgba(37,37,37,0.12); }
-  .urgency-label {
-    font-size: 0.78rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-top: 6px;
-    display: block;
-    color: var(--laranja);
-  }
-
-  /* ============================================================
-     MARQUEE / BANNER ANIMADO
-  ============================================================ */
-  .marquee-section {
-    background: var(--offblack);
-    padding: 18px 0;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  .marquee-section.marquee-orange {
-    background: var(--laranja);
-  }
-  .marquee-track {
-    display: inline-flex;
-    animation: marquee 18s linear infinite;
-  }
-  .marquee-track span {
-    color: var(--offwhite);
-    font-size: 0.9rem;
-    letter-spacing: 0.08em;
-    padding: 0 40px;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-  .marquee-section.marquee-orange .marquee-track span {
-    color: var(--offblack);
-  }
-  .marquee-track span::after {
-    content: ' \2726 ';
-    color: var(--laranja);
-    margin: 0 8px;
-  }
-  .marquee-section.marquee-orange .marquee-track span::after {
-    color: var(--offblack);
-  }
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  /* ============================================================
-     STICKY FOOTER
-  ============================================================ */
-  .sticky-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    background: var(--offblack);
-    height: var(--footer-h);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 32px;
-    box-shadow: 0 -2px 20px rgba(0,0,0,0.3);
-  }
-  .sticky-footer .footer-label {
-    color: var(--offwhite);
-    font-size: 0.82rem;
-    opacity: 0.75;
-  }
-  .sticky-footer .footer-label strong {
-    color: var(--offwhite);
-    opacity: 1;
-    font-size: 0.9rem;
-  }
-  @media (max-width: 600px) {
-    .sticky-footer { padding: 0 16px; justify-content: center; }
-    .sticky-footer .footer-label { display: none; }
-  }
-
-  /* ============================================================
-     IMAGE PLACEHOLDERS
-  ============================================================ */
-  .img-placeholder {
-    background: #C8C5BC;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #888;
-    font-size: 0.8rem;
-    text-align: center;
-    padding: 12px;
-    font-style: italic;
-  }
-
-  /* ============================================================
-     SECTION 1 — HERO
-  ============================================================ */
-  .hero {
-    background: var(--offblack);
-    position: relative;
-    padding: 100px 0 80px;
-    overflow: hidden;
-  }
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-  }
-  .hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(37, 37, 37, 0.72);
-  }
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-  .hero-content .eyebrow {
-    color: var(--laranja);
-  }
-  .hero-logo {
-    margin-bottom: 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    animation: fadeInDown 0.8s ease-out;
-  }
-  .hero-logo-main {
-    font-family: 'Campeche', sans-serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    color: var(--offwhite);
-    letter-spacing: 2px;
-    line-height: 1;
-  }
-  .hero-logo-sub {
-    font-family: 'FaracoHand', cursive;
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
-    color: var(--laranja);
-    font-weight: 400;
-    line-height: 1;
-  }
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  .hero-content h1 {
-    margin-bottom: 28px;
-    color: var(--offwhite);
-  }
-  .hero-sub {
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    color: var(--offwhite);
-    max-width: 640px;
-    margin: 0 auto 40px;
-    opacity: 0.82;
-  }
-
-  /* ============================================================
-     TEXT BOX
-  ============================================================ */
-  .text-box {
-    background: var(--offwhite-dark);
-    border-radius: 16px;
-    padding: 36px 40px;
-    margin-top: 40px;
-    border-left: 4px solid var(--laranja);
-  }
-  .text-box p { font-size: 1.05rem; line-height: 1.75; }
-
-  /* ============================================================
-     TWO BOXES / CHECKLIST
-  ============================================================ */
-  .two-boxes {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-top: 40px;
-  }
-  @media (max-width: 768px) {
-    .two-boxes { grid-template-columns: 1fr; }
-  }
-
-  .checklist-box {
-    border-radius: 20px;
-    padding: 40px 36px;
-  }
-  .checklist-box.dark { background: var(--offblack); color: var(--offwhite); }
-  .checklist-box.orange { background: var(--laranja); color: var(--offwhite); }
-
-  .checklist-box h3 {
-    margin-bottom: 28px;
-    color: inherit;
-  }
-
-  .checklist {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .checklist li {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-  .check-icon, .x-icon {
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.7rem;
-    font-weight: 900;
-    margin-top: 1px;
-  }
-  .check-icon { background: var(--laranja); color: var(--offwhite); }
-  .checklist-box.orange .check-icon { background: var(--offwhite); color: var(--laranja); }
-  .x-icon { background: var(--offwhite); color: var(--laranja); }
-  .checklist-box.orange .x-icon { background: rgba(255,255,255,0.25); color: var(--offwhite); }
-
-  /* ============================================================
-     DAY CARDS
-  ============================================================ */
-  .day-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-    margin-top: 48px;
-  }
-
-  .day-card {
-    background: var(--offblack);
-    color: var(--offwhite);
-    border-radius: 20px;
-    padding: 48px 44px;
-    position: relative;
-    overflow: hidden;
-  }
-  .day-number {
-    position: absolute;
-    top: 16px;
-    right: 32px;
-    font-size: 10rem;
-    font-weight: 400;
-    font-family: 'Asgard', serif;
-    font-style: normal;
-    color: rgba(255,255,255,0.08);
-    line-height: 1;
-    pointer-events: none;
-    user-select: none;
-  }
-  .day-card h3 {
-    color: var(--laranja);
-    font-size: 1.05rem;
-    font-style: normal;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-family: 'Campeche', sans-serif;
-    margin-bottom: 8px;
-  }
-  .day-subtitle {
-    font-style: italic;
-    opacity: 0.75;
-    margin-bottom: 24px;
-    font-size: 1rem;
-  }
-  .day-divider {
-    border: none;
-    border-top: 1px solid rgba(233, 103, 65, 0.35);
-    margin: 24px 0;
-  }
-  .day-card .checklist li { font-size: 0.92rem; }
-  .day-card .check-icon { background: var(--laranja); }
-  .day-closing {
-    font-weight: 700;
-    margin-top: 8px;
-    font-size: 0.95rem;
-    opacity: 0.9;
-  }
-
-  /* ============================================================
-     PRICING
-  ============================================================ */
-  .pricing-section {
-    background: var(--offblack);
-    position: relative;
-    overflow: hidden;
-  }
-  .pricing-bg {
-    position: absolute;
-    inset: 0;
-    background: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .pricing-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(37, 37, 37, 0.72);
-  }
-  .pricing-content { position: relative; z-index: 2; text-align: center; }
-  .pricing-content h2 { color: var(--offwhite); margin-bottom: 20px; }
-
-  .pricing-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 24px auto;
-    max-width: 480px;
-    text-align: left;
-  }
-  .pricing-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    color: var(--offwhite);
-    opacity: 0.75;
-    font-size: 1rem;
-  }
-  .pricing-list li .check-icon { background: var(--laranja); flex-shrink: 0; margin-top: 2px; }
-
-  .pivot-text {
-    font-family: 'Larken', Georgia, serif;
-    font-style: italic;
-    font-size: clamp(1.4rem, 3vw, 2.2rem);
-    color: var(--offwhite);
-    max-width: 640px;
-    margin: 32px auto 40px;
-    line-height: 1.3;
-  }
-
-  .offer-box {
-    background: rgba(255,255,255,0.05);
-    border: 2px solid var(--laranja);
-    border-radius: 24px;
-    padding: 48px 44px;
-    max-width: 520px;
-    margin: 0 auto 32px;
-    text-align: center;
-  }
-  .offer-box h3 {
-    color: var(--offwhite);
-    font-size: 1.5rem;
-    margin-bottom: 28px;
-  }
-  .offer-tags {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 36px;
-    text-align: left;
-  }
-  .offer-tag {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--offwhite);
-    font-size: 0.9rem;
-  }
-  .offer-tag::before {
-    content: '\2726';
-    color: var(--laranja);
-    font-size: 0.7rem;
-    flex-shrink: 0;
-  }
-  .price-main {
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    font-weight: 900;
-    color: var(--offwhite);
-    line-height: 1.1;
-  }
-  .price-sub {
-    font-size: 1rem;
-    color: var(--offwhite);
-    opacity: 0.65;
-    margin-top: 6px;
-  }
-  .price-divider {
-    margin: 20px auto;
-    border: none;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    max-width: 120px;
-  }
-  .btn-detail {
-    font-size: 0.82rem;
-    opacity: 0.65;
-    color: var(--offwhite);
-    margin-bottom: 16px;
-    display: block;
-    font-style: italic;
-  }
-
-  /* ============================================================
-     INSTRUCTORS
-  ============================================================ */
-  .instructors { display: flex; flex-direction: column; gap: 28px; margin-top: 48px; }
-
-  .instructor-card {
-    background: var(--offblack);
-    border-radius: 20px;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    min-height: 420px;
-  }
-  @media (max-width: 640px) {
-    .instructor-card { grid-template-columns: 1fr; }
-    .instructor-photo { height: 380px; }
-  }
-  .instructor-photo {
-    background: #3a3a3a;
-    overflow: hidden;
-    position: relative;
-  }
-  .instructor-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    display: block;
-  }
-  @media (max-width: 640px) {
-    .instructor-photo img {
-      object-position: top center;
-    }
-  }
-  .instructor-info {
-    padding: 36px 36px 36px 32px;
-    color: var(--offwhite);
-  }
-  .instructor-name {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--laranja);
-    margin-bottom: 6px;
-    font-style: normal;
-    font-family: 'Campeche', sans-serif;
-  }
-  .instructor-role {
-    font-size: 0.82rem;
-    opacity: 0.6;
-    margin-bottom: 16px;
-    line-height: 1.5;
-    font-style: italic;
-  }
-  .instructor-bio {
-    font-size: 0.9rem;
-    line-height: 1.65;
-    opacity: 0.85;
-  }
-
-  /* ============================================================
-     TESTIMONIALS
-  ============================================================ */
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin: 40px 0;
-  }
-  .testimonials-col { display: none; }
-
-  @media (max-width: 640px) {
-    .testimonials-grid {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      gap: 8px;
-    }
-    .testimonials-col {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      flex: 1;
-    }
-    .testimonials-grid > .testimonial-card { display: none; }
-  }
-
-  .testimonial-card {
-    background: transparent;
-    border-radius: 12px;
-    overflow: hidden;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-  }
-  .testimonial-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  }
-
-  /* ============================================================
-     FAQ
-  ============================================================ */
-  .faq-list { margin-top: 48px; }
-  .faq-item {
-    border-bottom: 1px solid rgba(37,37,37,0.15);
-  }
-  .faq-item:first-child { border-top: 1px solid rgba(37,37,37,0.15); }
-  .faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 24px 0;
-    cursor: pointer;
-    gap: 16px;
-    user-select: none;
-  }
-  .faq-question h4 {
-    font-family: 'Campeche', sans-serif;
-    font-style: normal;
-    font-size: 1.05rem;
-    font-weight: 700;
-    line-height: 1.4;
-  }
-  .faq-icon {
-    width: 28px;
-    height: 28px;
-    border: 2px solid var(--laranja);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--laranja);
-    font-size: 1rem;
-    font-weight: 700;
-    flex-shrink: 0;
-    transition: transform 0.25s, background 0.25s;
-  }
-  .faq-item.open .faq-icon {
-    background: var(--laranja);
-    color: var(--offwhite);
-    transform: rotate(45deg);
-  }
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease, padding 0.3s ease;
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: rgba(37,37,37,0.8);
-    padding: 0;
-  }
-  .faq-item.open .faq-answer {
-    max-height: 400px;
-    padding-bottom: 24px;
-  }
-
-  /* ============================================================
-     CHOICE SECTION
-  ============================================================ */
-  .choice-section {
-    background: var(--offblack);
-    text-align: center;
-  }
-  .choice-section h2 { color: var(--offwhite); }
-  .choice-body {
-    font-family: 'Larken', Georgia, serif;
-    font-style: italic;
-    font-size: clamp(1.3rem, 2.8vw, 2rem);
-    color: var(--offwhite);
-    max-width: 640px;
-    margin: 32px auto 40px;
-    line-height: 1.35;
-  }
-
-  /* ============================================================
-     STATIC FOOTER
-  ============================================================ */
-  .static-footer {
-    background: var(--offblack);
-    padding: 32px 24px;
-    text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
-  .static-footer p {
-    color: var(--offwhite);
-    opacity: 0.4;
-    font-size: 0.72rem;
-    line-height: 1.8;
-    margin: 0;
-  }
-
-  /* ============================================================
-     RESPONSIVE TWEAKS
-  ============================================================ */
-  .br-desktop { display: none; }
-  @media (min-width: 769px) {
-    .br-desktop { display: block; }
-  }
-  .br-mobile { display: none; }
-  @media (max-width: 768px) {
-    .br-mobile { display: block; }
-  }
-
-  @media (max-width: 768px) {
-    section { padding: 60px 0; }
-    .text-box { padding: 28px 24px; }
-    .checklist-box { padding: 32px 28px; }
-    .day-card { padding: 36px 28px; }
-    .day-number { font-size: 6rem; right: 16px; top: 10px; }
-    .offer-box { padding: 36px 28px; }
-    .instructor-info { padding: 28px 24px; }
-    .sticky-footer { height: 64px; }
-    :root { --footer-h: 64px; }
-  }
-
-  /* ============================================================
-     PAIN LIST (arrow style)
-  ============================================================ */
-  .pain-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin: 32px 0;
-  }
-  .pain-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-</style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "name": "Claudificando seu Conteúdo",
-  "description": "Workshop ao vivo sobre como criar conteúdo com Claude que posiciona sua marca e vende",
-  "startDate": "2026-07-10T09:00:00-03:00",
-  "endDate": "2026-07-11T18:00:00-03:00",
-  "eventStatus": "EventScheduled",
-  "eventAttendanceMode": "OnlineEventAndOffline",
-  "location": {
-    "@type": "VirtualLocation",
-    "url": "https://claudificando.com.br/workshop"
-  },
-  "organizer": {
-    "@type": "Organization",
-    "name": "Studio Propositum LTDA",
-    "url": "https://claudificando.com.br"
-  },
-  "offers": {
-    "@type": "Offer",
-    "url": "https://pay.kiwify.com.br/YXoFAQf",
-    "priceCurrency": "BRL",
-    "price": "77",
-    "availability": "https://schema.org/InStock",
-    "validFrom": "2026-06-11"
-  }
+/* ---------- TOKENS ---------- */
+:root{
+  --bg:#252525;
+  --bg2:#2c2c2a;
+  --card:#32322f;
+  --line:#44443f;
+  --ink:#F0EEE5;
+  --muted:#aaa49b;
+  --orange:#EB5E2B;
+  --orange-soft:#f2784a;
+  --cream:#F0EEE5;
+  --inkdark:#252525;
+  --sans:"Campeche","Helvetica Neue",Arial,system-ui,sans-serif;
+  --body:system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --serif:"Larken",Georgia,serif;
+  --maxw:1080px;
 }
-</script>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:18px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(120% 80% at 50% -10%, #312c27 0%, var(--bg) 55%);
+  overflow-x:hidden;
+}
+/* seções claras (intercaladas com as escuras) */
+section.light{
+  background:var(--cream);
+  color:var(--inkdark);
+  position:relative;z-index:1;
+  --ink:#252525;
+  --muted:#6f675b;
+  --line:#ded7c7;
+  --card:#ffffff;
+  --bg2:#e7e2d4;
+  border-top:1px solid #e4ddce;border-bottom:1px solid #e4ddce;
+}
+section.light .lead{opacity:1}
+/* textura granulada sutil */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+/* estampa de vaquinha como fundo translúcido */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.06;
+  background:url("img/vaquinha.png") center top/cover no-repeat;
+}
+/* logo do Claude como enfeite de fundo */
+.bg-claude{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.05;
+  background:url("img/claude-tile.svg") center top/600px repeat;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;position:relative;z-index:1}
+section{padding:88px 0}
+@media(max-width:640px){section{padding:60px 0}body{font-size:17px}}
+
+/* ---------- TIPOGRAFIA ---------- */
+.eyebrow{font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange)}
+.eyebrow.muted{color:var(--muted)}
+h1,h2,h3{font-family:var(--sans);font-weight:900;line-height:1.02;letter-spacing:-.01em;text-transform:none}
+h1{font-size:clamp(40px,7vw,76px)}
+h2{font-size:clamp(30px,4.6vw,50px);margin-bottom:14px}
+h3{font-size:22px;font-weight:700}
+.it{font-family:var(--serif);font-style:italic;font-weight:400}
+.or{color:var(--orange)}
+.lead{font-size:clamp(18px,2.3vw,23px);color:var(--ink);opacity:.92;max-width:62ch}
+.muted{color:var(--muted)}
+p+p{margin-top:16px}
+/* anti-viúvas */
+h1,h2,h3,.lead,.eyebrow{text-wrap:balance}
+p,li,figcaption{text-wrap:pretty}
+
+/* ---------- BOTÃO ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--orange);color:#1a0f0a;font-family:var(--sans);font-weight:900;
+  font-size:17px;letter-spacing:.01em;text-decoration:none;
+  padding:18px 34px;border-radius:999px;border:0;cursor:pointer;
+  box-shadow:0 10px 34px rgba(232,88,40,.34);transition:transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 42px rgba(232,88,40,.5)}
+.btn .dot{width:9px;height:9px;border-radius:50%;background:#1a0f0a}
+
+/* ---------- BARRA FIXA ---------- */
+.topbar{
+  position:sticky;top:0;z-index:50;background:rgba(37,37,37,.84);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:13px;padding-bottom:13px}
+.topbar .date{font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:.04em}
+.topbar .date b{color:var(--orange)}
+.topbar .btn{padding:12px 22px;font-size:14px;box-shadow:none}
+@media(max-width:640px){.topbar .date span{display:none}}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;overflow:hidden;padding:80px 0 64px;text-align:center}
+.hero-figs{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hero-figs img{position:absolute;bottom:0;height:106%;width:auto;opacity:.92}
+.hero-figs .let{left:-7%}
+.hero-figs .lud{right:-7%}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(78% 74% at 50% 52%, rgba(37,37,37,.86) 0%, rgba(37,37,37,.62) 52%, rgba(37,37,37,.28) 100%)}
+.hero .wrap{position:relative;z-index:2}
+.hero-copy{max-width:800px;margin:0 auto}
+@media(max-width:820px){.hero-figs img{height:74%;opacity:.42}.hero-figs .let{left:-22%}.hero-figs .lud{right:-22%}}
+.hero .badge{display:inline-flex;gap:10px;align-items:center;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-family:var(--sans);font-weight:700;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+.hero .badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 0 rgba(232,88,40,.6);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(232,88,40,.55)}70%{box-shadow:0 0 0 12px rgba(232,88,40,0)}100%{box-shadow:0 0 0 0 rgba(232,88,40,0)}}
+.hero h1{margin:26px 0 22px}
+.hero h1 .it{font-size:1.02em}
+.hero .script{font-family:"Uertas",cursive;color:var(--orange-soft);font-size:clamp(26px,4vw,40px);line-height:1;display:inline-block;transform:rotate(-4deg);margin:6px 0 4px}
+.hero .lead{margin:0 auto}
+.hero .cta-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:18px;margin-top:30px}
+.hero .reassure{font-size:14.5px;color:var(--muted)}
+
+/* ---------- LISTAS / CARDS ---------- */
+.grid{display:grid;gap:18px}
+.cols-2{grid-template-columns:repeat(2,1fr)}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:820px){.cols-3{grid-template-columns:1fr}.cols-2{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}
+.card h3{margin-bottom:8px}
+.card .num{font-family:var(--sans);font-weight:900;color:var(--orange);font-size:15px;letter-spacing:.1em;display:block;margin-bottom:12px}
+
+ul.checks{list-style:none;display:grid;gap:14px;margin-top:8px}
+ul.checks li{position:relative;padding-left:38px;font-size:18px}
+ul.checks li::before{content:"";position:absolute;left:0;top:2px;width:24px;height:24px;border-radius:50%;background:rgba(232,88,40,.16);border:1px solid var(--orange)}
+ul.checks li::after{content:"";position:absolute;left:8px;top:8px;width:8px;height:4px;border-left:2px solid var(--orange);border-bottom:2px solid var(--orange);transform:rotate(-45deg)}
+ul.checks li b{color:var(--ink)}
+
+/* ---------- PROVA / STATS ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:8px 0 36px}
+@media(max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:linear-gradient(180deg,#1d1512,#15100e);border:1px solid var(--line);border-radius:16px;padding:24px 18px;text-align:center}
+.stat .big{font-family:var(--sans);font-weight:900;font-size:clamp(34px,5vw,46px);color:var(--orange);line-height:1}
+.stat .lbl{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.3}
+.prints{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+@media(max-width:820px){.prints{grid-template-columns:1fr}}
+.print{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:12px;overflow:hidden}
+.print img{width:100%;border-radius:10px;display:block}
+.print .cap{font-size:13.5px;color:var(--muted);padding:12px 6px 4px}
+.quote{font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.5;color:var(--ink);border-left:3px solid var(--orange);padding-left:20px;margin:6px 0}
+
+/* ---------- DIAS ---------- */
+.day{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px}
+.day .tag{font-family:var(--sans);font-weight:900;color:var(--orange);font-size:14px;letter-spacing:.08em}
+.day h3{font-size:25px;margin:6px 0 12px}
+
+/* ---------- INSTRUTORES ---------- */
+.people{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:820px){.people{grid-template-columns:1fr}}
+.person{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.person .pphoto{width:100%;height:340px;overflow:hidden;background:#0c0a09}
+.person .pphoto img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block;filter:saturate(1.02)}
+.person .pbody{padding:24px 26px 28px}
+.person .name{font-family:var(--sans);font-weight:900;font-size:22px}
+.person .handle{color:var(--orange);font-size:14px;font-weight:700;font-family:var(--sans);letter-spacing:.03em}
+
+/* ---------- DEPOIMENTOS ---------- */
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;display:flex;flex-direction:column;height:100%}
+.tquote{font-size:19.5px;line-height:1.62}
+.tquote .qm{font-family:var(--serif);font-style:italic;color:var(--orange);font-size:34px;line-height:0;vertical-align:-6px;margin-right:4px}
+.hl{background:linear-gradient(transparent 56%, rgba(232,88,40,.40) 56%);padding:0 3px;font-weight:600;color:#fff}
+.tmeta{display:flex;align-items:center;gap:12px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.tmeta .av{width:42px;height:42px;border-radius:50%;background:rgba(232,88,40,.15);border:1px solid var(--orange);display:grid;place-items:center;color:var(--orange);font-family:var(--sans);font-weight:900;font-size:16px}
+.tmeta .who{font-size:14px;color:var(--muted);line-height:1.3}
+.tmeta .who b{color:var(--ink);font-family:var(--sans);display:block;font-size:14.5px}
+.realprints{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+@media(max-width:820px){.realprints{grid-template-columns:repeat(2,1fr)}}
+.realprints figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:8px}
+.realprints img{width:100%;border-radius:7px;display:block}
+.realprints figcaption{font-size:11.5px;color:var(--muted);text-align:center;padding:8px 2px 2px}
+
+/* ---------- OFERTA ---------- */
+.pricing{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+@media(max-width:820px){.pricing{grid-template-columns:1fr}}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:32px;position:relative;display:flex;flex-direction:column}
+.plan.feat{border-color:var(--orange);box-shadow:0 0 0 1px var(--orange) inset, 0 20px 50px rgba(232,88,40,.16)}
+.plan .ribbon{position:absolute;top:-13px;left:32px;background:var(--orange);color:#1a0f0a;font-family:var(--sans);font-weight:900;font-size:12px;letter-spacing:.08em;padding:6px 14px;border-radius:999px;text-transform:uppercase}
+.plan .pname{font-family:var(--sans);font-weight:700;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.plan .price{font-family:var(--sans);font-weight:900;font-size:46px;margin:10px 0 2px;line-height:1}
+.plan .price small{font-size:18px;color:var(--muted);font-weight:700}
+.plan .inst{color:var(--muted);font-size:14.5px;margin-bottom:20px}
+.plan ul{list-style:none;display:grid;gap:12px;margin-bottom:26px}
+.plan ul li{position:relative;padding-left:26px;font-size:16px}
+.plan ul li::before{content:"+";position:absolute;left:0;color:var(--orange);font-weight:900;font-family:var(--sans)}
+.plan .btn{margin-top:auto;justify-content:center}
+
+/* ---------- GARANTIA ---------- */
+.guarantee{display:flex;gap:24px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px}
+.guarantee .seal{flex:0 0 auto;width:96px;height:96px;border-radius:50%;border:2px solid var(--orange);display:grid;place-items:center;text-align:center;font-family:var(--sans);font-weight:900;color:var(--orange);line-height:1.05;font-size:15px}
+.guarantee .seal b{font-size:30px;display:block}
+@media(max-width:640px){.guarantee{flex-direction:column;text-align:center}}
+
+/* ---------- FECHAMENTO ---------- */
+.closing{text-align:center;background:radial-gradient(80% 120% at 50% 0%, #322c27, var(--bg));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.closing h2{max-width:18ch;margin:0 auto 18px}
+.closing .scar{font-size:14.5px;color:var(--muted);margin-top:18px}
+
+/* ---------- FAQ ---------- */
+.faq details{border-bottom:1px solid var(--line);padding:6px 0}
+.faq summary{list-style:none;cursor:pointer;font-family:var(--sans);font-weight:700;font-size:19px;padding:18px 40px 18px 0;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:6px;top:16px;color:var(--orange);font-size:26px;font-weight:900;font-family:var(--sans);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{color:var(--muted);padding:0 0 18px}
+
+/* ---------- FOOTER ---------- */
+footer{padding:46px 0;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:13.5px}
+footer .logo{font-family:var(--sans);font-weight:900;color:var(--ink);font-size:18px;letter-spacing:.02em}
+footer .logo .or{color:var(--orange)}
+.section-head{margin-bottom:30px}
+
+/* ---------- HERO COM FOTO ---------- */
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:34px}}
+.hero-art{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+.hero-art img{width:100%;display:block}
+.hero-art .names{position:absolute;left:18px;bottom:14px;font-family:var(--sans);font-weight:900;font-size:18px;letter-spacing:.02em;text-shadow:0 2px 10px rgba(0,0,0,.5)}
+.hero-art .names span{color:var(--orange)}
+
+/* ---------- ESTAMPA VAQUINHA ---------- */
+.cowstrip{height:60px;background:url("img/vaquinha.png");background-size:cover;background-position:center;opacity:.9;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* ---------- PRINTS DE DESTAQUE ---------- */
+.bigresults{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;align-items:start}
+@media(max-width:640px){.bigresults{grid-template-columns:1fr}}
+
+/* ---------- MOCKUPS DE FERRAMENTA ---------- */
+.tool-row{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center;margin-bottom:56px}
+.tool-row:last-child{margin-bottom:0}
+.tool-row.flip .tool-visual{order:2}
+@media(max-width:820px){.tool-row{grid-template-columns:1fr;gap:28px}.tool-row.flip .tool-visual{order:0}}
+.tool-visual{position:relative;padding-bottom:30px;padding-right:22px}
+.ipad{background:#0e0b0a;border-radius:22px;padding:11px;border:1px solid #2c2320;box-shadow:0 30px 70px rgba(0,0,0,.55);position:relative}
+.ipad::before{content:"";position:absolute;top:4px;left:50%;transform:translateX(-50%);width:6px;height:6px;border-radius:50%;background:#3a2e22;z-index:3}
+.ipad .screen{border-radius:11px;overflow:hidden;background:#000;line-height:0}
+.ipad .screen img{width:100%;display:block}
+.tool-visual .float{position:absolute;right:0;bottom:0;width:50%;border-radius:10px;border:4px solid #15100e;box-shadow:0 18px 46px rgba(0,0,0,.6);background:#000;line-height:0;z-index:2}
+.tool-visual .float img{width:100%;display:block;border-radius:6px}
+.tool-text .n{font-family:var(--sans);font-weight:900;color:var(--orange);font-size:14px;letter-spacing:.06em}
+.tool-text h3{font-size:clamp(24px,3vw,30px);margin:8px 0 12px}
+.tool-text p{color:var(--muted);font-size:16.5px}
+
+/* ---------- PRINTS DE MÉTRICA ---------- */
+.metrics-prints{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start;margin-top:8px}
+@media(max-width:820px){.metrics-prints{grid-template-columns:1fr}}
+.mp-col{display:flex;flex-direction:column;gap:18px}
+.mp{margin:0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;box-shadow:0 14px 40px rgba(0,0,0,.28)}
+.mp img{width:100%;border-radius:8px;display:block}
+.mp figcaption{font-family:var(--sans);font-weight:700;font-size:14.5px;color:#1a0f0a;margin-top:14px;line-height:1.35}
+
+/* ---------- DEPOIMENTOS EM PRINT ---------- */
+.depo-masonry{columns:2;column-gap:18px}
+@media(max-width:640px){.depo-masonry{columns:1}}
+.depo-masonry figure{margin:0 0 18px;break-inside:avoid;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;box-shadow:0 14px 40px rgba(0,0,0,.28)}
+.depo-masonry img{width:100%;border-radius:8px;display:block}
+</style>
 </head>
 <body>
+<div class="bg-claude" aria-hidden="true"></div>
 
-<!-- ============================================================
-     MARQUEE TOP
-============================================================ -->
-<div class="marquee-section">
-  <div class="marquee-track">
-    <span>10 e 11 de julho</span>
-    <span>Ao vivo + gravacao</span>
-    <span>Claude na pratica</span>
-    <span>10 e 11 de julho</span>
-    <span>Ao vivo + gravacao</span>
-    <span>Claude na pratica</span>
-    <span>10 e 11 de julho</span>
-    <span>Ao vivo + gravacao</span>
-    <span>Claude na pratica</span>
-    <span>10 e 11 de julho</span>
-    <span>Ao vivo + gravacao</span>
-    <span>Claude na pratica</span>
+<!-- BARRA FIXA -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="date"><b>10 e 11 de julho</b> <span>· ao vivo · vagas por lote</span></div>
+    <a href="#oferta" class="btn">Quero minha vaga</a>
   </div>
 </div>
 
-<!-- ============================================================
-     SECTION 1 — HERO
-============================================================ -->
-<section class="hero">
-  <div class="hero-bg" style="background-image:url('../assets/vaquinha.png');background-size:cover;background-position:center;"></div>
-  <div class="hero-content">
-    <div class="hero-logo">
-      <div class="hero-logo-main">CLAUDIFICANDO</div>
-      <div class="hero-logo-sub">o seu conteúdo</div>
-    </div>
-    <span class="eyebrow">Workshop ao vivo para quem vende pela própria marca</span>
-    <h1>Crie conteúdo que vende usando o Claude, sem soar genérico e sem cara de IA.</h1>
-    <p class="hero-sub">Em 2 dias ao vivo, você configura o Claude (uma IA melhor que o ChatGPT pra escrever) com a sua voz e sai com uma estratégia de conteúdo que atrai cliente qualificado, em vez de depender só de indicação.</p>
-    <a href="https://pay.kiwify.com.br/YXoFAQf" target="_blank" class="btn">
-      Quero minha vaga
-    </a>
-    <p style="margin-top:16px;font-size:0.85rem;color:var(--offwhite);opacity:0.65;">Turma ao vivo · 10 e 11 de julho · vagas limitadas</p>
-    <div class="urgency-wrap">
-      <div class="progress-bar-bg" style="background:rgba(255,255,255,0.15);">
-        <div class="progress-bar-fill"></div>
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-figs">
+    <img class="let" src="img/let-cut.png" alt="Let Milani">
+    <img class="lud" src="img/lud-cut.png" alt="Lud Araujo">
+  </div>
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="badge"><span class="pulse"></span>Workshop ao vivo · 10 e 11 de julho</span>
+      <h1>Crie conteúdo que <span class="it or">vende</span> usando o <span class="or">Claude</span>, sem soar genérico e <span class="it">sem cara de IA.</span></h1>
+      <p class="lead">Em 2 dias você monta uma estratégia prática e treina o Claude pra produzir com a sua voz, construindo um sistema que atrai pessoas que chegam já entendendo o seu valor e <b>não questionam o seu preço</b>.</p>
+      <div class="cta-row">
+        <a href="#oferta" class="btn"><span class="dot"></span>Quero minha vaga</a>
+        <span class="reassure">Garantia incondicional de 7 dias · a partir de 12x R$ 7,96</span>
       </div>
     </div>
   </div>
-</section>
-
-<!-- ============================================================
-     SECTION 2 — O QUE É O CLAUDE
-============================================================ -->
-<section class="section-offwhite">
-  <div class="container">
-    <span class="eyebrow">Mas primeiro...</span>
-    <h2>O que é o Claude?</h2>
-    <p style="margin-top:20px; font-size:1.1rem; line-height:1.75; max-width:680px;">
-      O Claude é uma inteligência artificial da mesma família do ChatGPT, mas bem melhor pra escrever do jeito que uma pessoa de verdade escreve. Você não precisa saber nada de IA pra entrar, a gente ensina do zero. E não, não é mais um pacote de "100 prompts mágicos". É como fazer a IA pensar a partir da sua marca, pra o conteúdo continuar sendo seu.
-    </p>
+</header>
+<!-- PROBLEMA -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow muted">Se você se reconhece aqui</span>
+    <h2 style="margin-top:14px">Você posta, posta, e parece que <span class="it or">fala com a parede</span></h2>
+    <p class="lead muted">Os seguidores até crescem, mas vem gente que nunca vai comprar. As ideias acabam na terça. E quando você tenta usar o ChatGPT pra adiantar, sai um texto correto, organizado e sem alma, que você não teria coragem de publicar.</p>
+    <p class="lead" style="margin-top:18px">No fim, o cliente bom continua chegando só por indicação. Uma fila que você não controla e que pode secar a qualquer momento.</p>
   </div>
 </section>
 
-<!-- ============================================================
-     SECTION 3 — A DOR
-============================================================ -->
-<section class="section-offwhite" style="background: var(--offwhite-dark);">
-  <div class="container">
-    <h2>Você posta, posta, e o cliente bom não aparece</h2>
-    <p style="margin-top:16px; font-size:1.05rem; opacity:0.75; max-width:600px;">Talvez você se reconheça em pelo menos uma destas:</p>
+<!-- O QUE MUDA -->
+<section class="light">
+  <div class="wrap">
+    <span class="eyebrow">O que muda aqui</span>
+    <h2 style="margin-top:14px">A gente faz o <span class="it or">caminho inverso</span></h2>
+    <p class="lead">A maioria dos cursos te ensina a usar IA pra postar mais. O problema nunca foi volume. Primeiro a gente constrói a sua marca pessoal e o seu posicionamento. Depois ensina o Claude a escrever a partir disso. Aí a IA para de devolver a média da internet e passa a escrever igual você escreveria num dia inspirado.</p>
+  </div>
+</section>
 
-    <ul class="pain-list" style="margin-top:32px;">
-      <li><span class="check-icon" style="background:rgba(233,103,65,0.3);color:var(--laranja);">→</span><span>abre o Instagram pra postar e trava, porque não vem ideia</span></li>
-      <li><span class="check-icon" style="background:rgba(233,103,65,0.3);color:var(--laranja);">→</span><span>até cria, mas vem o tipo de seguidor que nunca compra, nunca o cliente qualificado</span></li>
-      <li><span class="check-icon" style="background:rgba(233,103,65,0.3);color:var(--laranja);">→</span><span>mantém a consistência há meses e os resultados não saem do lugar</span></li>
-      <li><span class="check-icon" style="background:rgba(233,103,65,0.3);color:var(--laranja);">→</span><span>quando fecha um trabalho, é quase sempre por indicação, nunca pelo conteúdo</span></li>
-      <li><span class="check-icon" style="background:rgba(233,103,65,0.3);color:var(--laranja);">→</span><span>e quando usa IA pra escrever, sai aquele texto que todo mundo bate o olho e sabe que foi IA</span></li>
-    </ul>
-
-    <div class="text-box">
-      <p>A culpa não é sua. Ensinaram pra todo mundo o mesmo caminho: olha o que está performando, copia, adapta, posta. Só que, quando todo mundo faz igual, o seu post podia ter sido publicado por qualquer concorrente. Conteúdo genérico não atrai cliente que paga bem, atrai gente que pede desconto.</p>
-      <p>O que falta não é ideia nem disciplina. Falta uma <strong>lógica própria de posicionamento</strong> por trás do que você publica.</p>
+<!-- MARCA PESSOAL -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Dia 1 · a base</span>
+      <h2 style="margin-top:14px">Marca pessoal é a <span class="it or">base de tudo</span></h2>
+      <p class="lead">Antes de pensar em post, prompt ou frequência, tem uma pergunta que decide o resultado: por que alguém seguiria e compraria de você, e não de outras dez pessoas que fazem a mesma coisa? Quando a marca pessoal está bem construída, o cliente certo chega já entendendo o seu valor, e o desconto sai da conversa.</p>
     </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     SECTION 4 — A VIRADA
-============================================================ -->
-<section class="section-dark" style="padding:80px 0;">
-  <div class="container">
-    <h2 style="color:var(--offwhite);">Aqui é diferente do workshop de IA que passa no seu feed</h2>
-    <p style="margin-top:20px; font-size:1.1rem; color:var(--offwhite); opacity:0.82; max-width:640px; line-height:1.75;">
-      A maioria te entrega prompt pronto e te manda embora. Você cola, gera um post bonitinho e na semana seguinte está travada de novo.
-    </p>
-    <p style="font-size:1.1rem; color:var(--offwhite); opacity:0.82; max-width:640px; line-height:1.75;">
-      Aqui a gente faz o contrário: primeiro extrai o seu posicionamento, depois ensina o Claude a escrever a partir dele. O resultado é conteúdo com a sua cabeça dentro, que atrai a pessoa certa e funciona como engrenagem de venda, mesmo nos dias sem inspiração.
-    </p>
-    <div style="text-align:center; margin-top:48px;">
-      <a href="https://pay.kiwify.com.br/YXoFAQf" target="_blank" class="btn btn-center">
-        Quero minha vaga
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     SECTION 5 — O QUE VOCÊ LEVA
-============================================================ -->
-<section class="section-offwhite">
-  <div class="container">
-    <h2>O que você sai sabendo fazer</h2>
-    <ul class="checklist" style="margin-top:32px; max-width:640px;">
-      <li><span class="check-icon">✓</span><span>nunca mais ficar sem ideia, com um banco de temas e referências que só você fala do jeito que fala</span></li>
-      <li><span class="check-icon">✓</span><span>criar conteúdo que atrai cliente qualificado, não curtida de quem nunca vai comprar</span></li>
-      <li><span class="check-icon">✓</span><span>montar posts que conduzem pra venda do seu serviço, sem você soar pedinte</span></li>
-      <li><span class="check-icon">✓</span><span>configurar o Claude com a sua voz, pra produzir rápido sem sair aquele texto de IA</span></li>
-      <li><span class="check-icon">✓</span><span>ter uma estrutura pronta no Notion pra continuar criando sozinha, sem depender de indicação pra fechar</span></li>
+    <ul class="checks">
+      <li><b>O seu diferencial real</b>, aquilo que só você tem e que faz a pessoa parar de te comparar com os concorrentes</li>
+      <li><b>O seu cliente ideal definido</b>, pra você falar com quem compra e parar de gastar energia com quem só consome de graça</li>
+      <li><b>Os seus pilares de conteúdo</b>, os temas centrais que sustentam a sua autoridade sem você se repetir</li>
+      <li><b>A sua voz</b>, o jeito de falar que é reconhecidamente seu (e que depois vai pro Claude)</li>
+      <li><b>A sua narrativa de autoridade</b>, a história e as provas que fazem a pessoa confiar antes de você oferecer algo</li>
     </ul>
   </div>
 </section>
 
-<!-- ============================================================
-     SECTION 6 — OS DOIS DIAS
-============================================================ -->
-<section class="section-offwhite" style="background: var(--offwhite-dark);">
-  <div class="container">
-    <h2>Dois dias, dois resultados na mão</h2>
-    <p style="margin-top:16px; font-size:1.05rem; opacity:0.75; max-width:640px;">
-      Não é teoria pra guardar. Você entra pra colocar a mão na massa e já sai com coisa pronta.
-    </p>
+<!-- POR QUE CLAUDE -->
+<section class="light">
+  <div class="wrap">
+    <span class="eyebrow">Dia 2 · a ferramenta</span>
+    <h2 style="margin-top:14px">Por que <span class="it or">Claude</span> (e não ChatGPT)</h2>
+    <p class="lead">Claude é uma IA parecida com o ChatGPT, com uma vantagem específica: escreve de um jeito natural, que soa humano. É a diferença entre um texto que parece modelo de e-mail corporativo e um texto que parece você conversando. Você não precisa entender nada de IA. A gente configura tudo do zero, no dia.</p>
+  </div>
+</section>
 
-    <div class="two-boxes" style="margin-top:40px;">
-      <div class="day-card">
-        <div class="day-number">01</div>
-        <h3>Dia 1 — Marca Pessoal + Posicionamento</h3>
-        <hr class="day-divider">
-        <p style="font-size:0.95rem;line-height:1.7;opacity:0.85;">Você mapeia quem você é e transforma isso em estratégia: seus temas centrais, seu público e seu anti-público, seus diferenciais reais, sua voz e os conteúdos que sustentam sua autoridade no longo prazo. No fim do dia, você para de criar a partir do que performa pra todo mundo e passa a criar a partir do que faz sentido pra marca que você quer.</p>
+<!-- PROVA -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Isso não é teoria</span>
+      <h2 style="margin-top:14px">É <span class="it or">resultado</span></h2>
+      <p class="lead muted">Essa é a estratégia que nós aplicamos na prática para os nossos clientes. Conteúdos construídos com esse método:</p>
+    </div>
+    <div class="bigresults">
+      <figure class="mp"><img src="img/metric-281.jpg" alt="281.963 visualizações e 1.034 seguidores"><figcaption>281 mil visualizações e +1.034 seguidores com um post só.</figcaption></figure>
+      <figure class="mp"><img src="img/metric-132.jpg" alt="132.437 views e 437 seguidores"><figcaption>132 mil views e +437 seguidores num único reel.</figcaption></figure>
+    </div>
+    <div class="metrics-prints">
+      <figure class="mp"><img src="img/metric-views.jpg" alt="23.320 visualizações, 87,2% não seguidores"><figcaption>23 mil visualizações num reel só, e 87% vieram de quem ainda nem seguia.</figcaption></figure>
+      <div class="mp-col">
+        <figure class="mp"><img src="img/metric-reach.jpg" alt="11.166 contas alcançadas"><figcaption>11 mil contas alcançadas, quase metade entrando pela aba Reels.</figcaption></figure>
+        <figure class="mp"><img src="img/metric-shares.jpg" alt="250 compartilhamentos e 36 novos seguidores"><figcaption>250 compartilhamentos que viraram 36 seguidores novos.</figcaption></figure>
       </div>
+    </div>
+    <!-- DICA: tem os prints de 281 mil e 132 mil? Me manda que eu circulo e adiciono aqui também. -->
+  </div>
+</section>
 
-      <div class="day-card">
-        <div class="day-number">02</div>
-        <h3>Dia 2 — Claude + Estratégia de Conteúdo</h3>
-        <hr class="day-divider">
-        <p style="font-size:0.95rem;line-height:1.7;opacity:0.85;">Você transforma esse posicionamento em linha editorial e ensina o Claude a executar: prompts com a sua voz, banco de histórias pessoais, funis de topo, meio e fundo pra gerar lead qualificado, e skills sob medida pro seu fluxo. Você sai com a lógica, os prompts e a estrutura no Notion pra rodar sozinha.</p>
+<!-- DEPOIMENTOS -->
+<section class="light">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Quem já viveu o método</span>
+      <h2 style="margin-top:14px">O que dizem de <span class="it or">perto</span></h2>
+    </div>
+    <div class="depo-masonry">
+      <figure><img src="img/depo-1.jpg" alt="Depoimento: marca pessoal, posicionamento e clientes começaram a brotar"></figure>
+      <figure><img src="img/depo-3.jpg" alt="Depoimento: reels de teste geraram mais de 100 seguidores"></figure>
+      <figure><img src="img/depo-2.jpg" alt="Depoimento: muito boa sua metodologia, melhor jeito que já vi"></figure>
+      <figure><img src="img/depo-4.jpg" alt="Depoimento: post bombando, ganhando seguidor no orgânico"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE VOCÊ LEVA -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">A entrega</span>
+      <h2 style="margin-top:14px">O que você <span class="it or">leva pra casa</span> depois dos 2 dias</h2>
+      <p class="lead muted">Você não sai com anotações pra organizar depois. Sai com a máquina montada e rodando.</p>
+    </div>
+    <ul class="checks">
+      <li>Seu <b>posicionamento de marca pessoal</b> definido e escrito</li>
+      <li>O <b>Claude configurado com a sua voz</b>, é só abrir e pedir</li>
+      <li>Um <b>banco de temas</b> pra nunca mais travar na hora de postar</li>
+      <li>Seus <b>primeiros posts já escritos</b>, prontos pra publicar amanhã</li>
+      <li>Uma <b>estrutura no Notion</b> com workbook e prompts pra você seguir criando sozinha</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FERRAMENTAS -->
+<section class="light">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Vai junto no seu acesso</span>
+      <h2 style="margin-top:14px">Você vai ter acesso a um <span class="it or">arsenal de ferramentas</span></h2>
+      <p class="lead muted">Teste de arquétipos, sistema de ganchos, banco de referências e muito mais. Não é só aula: você sai com um sistema montado pra criar todo dia sem travar.</p>
+    </div>
+    <div class="tool-row">
+      <div class="tool-visual">
+        <div class="ipad"><div class="screen"><img src="img/tool-arq-main.jpg" alt="Teste de arquétipos: o que você valoriza"></div></div>
+        <div class="float"><img src="img/tool-arq-float.jpg" alt="Quiz de arquétipos"></div>
+      </div>
+      <div class="tool-text">
+        <div class="n">FERRAMENTA 01</div>
+        <h3>Teste de arquétipos</h3>
+        <p>Um quiz guiado que revela os arquétipos da sua marca e para de te deixar postar no escuro. É daqui que sai a identidade de tudo que você publica.</p>
+      </div>
+    </div>
+    <div class="tool-row flip">
+      <div class="tool-visual">
+        <div class="ipad"><div class="screen"><img src="img/tool-sis-main.jpg" alt="Sistema automático de ganchos"></div></div>
+        <div class="float"><img src="img/tool-sis-float.jpg" alt="Tabela de ganchos por estrutura"></div>
+      </div>
+      <div class="tool-text">
+        <div class="n">FERRAMENTA 02</div>
+        <h3>Sistema de ganchos</h3>
+        <p>Um banco de estruturas de gancho viral organizado por intenção. Você escolhe o objetivo do post e já sai com a primeira linha pronta, sem encarar a tela em branco.</p>
+      </div>
+    </div>
+    <div class="tool-row">
+      <div class="tool-visual">
+        <div class="ipad"><div class="screen"><img src="img/tool-acv-main.jpg" alt="Banco de referências: O acervo"></div></div>
+        <div class="float"><img src="img/tool-acv-float.jpg" alt="Cards de referência de conteúdo"></div>
+      </div>
+      <div class="tool-text">
+        <div class="n">FERRAMENTA 03</div>
+        <h3>Banco de referências</h3>
+        <p>Um acervo de conteúdos que viralizaram de verdade, catalogados por rede e tema, com o que funcionou em cada um. Inspiração na hora, sem rolar o feed por horas.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     SECTION 7 — QUEM TE GUIA
-============================================================ -->
-<section class="section-offwhite">
-  <div class="container">
-    <span class="eyebrow">Quem vai te guiar</span>
-    <h2>Duas pessoas que vivem o que ensinam</h2>
-    <p style="margin-top:20px; font-size:1.05rem; opacity:0.75; max-width:600px;">
-      Uma estrategista de posicionamento e uma de conteúdo, juntas, entregando o que falta na maioria dos workshops de IA: estratégia de verdade, não truque de ferramenta.
-    </p>
+<!-- OS 2 DIAS -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Como funciona</span>
+      <h2 style="margin-top:14px">Dois dias, <span class="it or">ao vivo</span></h2>
+    </div>
+    <div class="grid cols-2">
+      <div class="day">
+        <span class="tag">DIA 1</span>
+        <h3>Marca pessoal e posicionamento</h3>
+        <p class="muted">A base. Identidade, diferenciais, cliente ideal, pilares de conteúdo e a sua voz.</p>
+      </div>
+      <div class="day">
+        <span class="tag">DIA 2</span>
+        <h3>Claude e estratégia</h3>
+        <p class="muted">A gente transforma tudo isso em linha editorial, ensina o Claude a executar com prompts feitos pra você, monta o banco de histórias, os funis de venda e deixa sua estrutura rodando no Notion.</p>
+      </div>
+    </div>
+    <p class="muted" style="margin-top:22px;font-family:var(--sans);font-weight:700">🗓 10 e 11 de julho · 9h às 16h (1h de almoço) · ao vivo</p>
+  </div>
+</section>
 
-    <div class="instructors">
-      <!-- LUD -->
-      <div class="instructor-card">
-        <div class="instructor-photo"><img src="../assets/imgs/lud.jpg" alt="Lud Araujo"></div>
-        <div class="instructor-info">
-          <p class="instructor-name">Lud Araujo | @aludaraujo</p>
-          <p class="instructor-bio">Designer, consultora de imagem e especialista em branding. Engenheira de formação. Em 6 anos, mais de 500 imagens pessoais transformadas, 80 marcas criadas e 20 mulheres mentoradas.</p>
+<!-- INSTRUTORES -->
+<section class="light">
+  <div class="wrap">
+    <span class="eyebrow">Quem te conduz</span>
+    <h2 style="margin:14px 0 26px">As duas cabeças por <span class="it or">trás disso</span></h2>
+    <div class="people">
+      <div class="person">
+        <div class="pphoto"><img src="img/lud.jpg" alt="Lud Araujo"></div>
+        <div class="pbody">
+          <div class="name">Lud Araujo</div>
+          <div class="handle">@aludaraujo</div>
+          <p class="muted" style="margin-top:12px">Designer, consultora de imagem e especialista em branding. Em 6 anos, mais de 500 transformações pessoais e 80 marcas criadas.</p>
         </div>
       </div>
-
-      <!-- LET -->
-      <div class="instructor-card">
-        <div class="instructor-photo"><img src="../assets/imgs/let.jpg" alt="Let Milani"></div>
-        <div class="instructor-info">
-          <p class="instructor-name">Let Milani | @leticialmilani</p>
-          <p class="instructor-bio">Jornalista e estrategista de conteúdo baseada em dados. Em 8 anos, ajudou marcas pessoais a se posicionarem com resultado real, porque like não paga boleto. Aprendeu a usar o Claude pra produzir conteúdo autêntico, com zero cara de IA. É isso que vai te ensinar na prática.</p>
+      <div class="person">
+        <div class="pphoto"><img src="img/let.jpg" alt="Let Milani"></div>
+        <div class="pbody">
+          <div class="name">Let Milani</div>
+          <div class="handle">@leticialmilani</div>
+          <p class="muted" style="margin-top:12px">Jornalista e estrategista de conteúdo. 8 anos posicionando marcas pessoais com base em dados, e os resultados de alcance aí em cima saíram desse método.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     SECTION 8 — DEPOIMENTOS
-============================================================ -->
-<section class="section-offwhite" style="background: var(--offwhite-dark); background-image: url('../assets/vaquinha.png'); background-size: cover; background-position: center; background-blend-mode: multiply; position: relative;">
-  <div style="position:absolute;inset:0;background:rgba(240,238,229,0.88);z-index:0;"></div>
-  <div class="container-wide" style="position:relative;z-index:1;">
-    <span class="eyebrow">Resultados reais</span>
-    <h2>O que aconteceu com quem aplicou o método</h2>
-
-    <div class="testimonials-grid">
-      <div class="testimonial-card"><img src="../assets/imgs/dep1.jpg" alt="Depoimento 1"></div>
-      <div class="testimonial-card"><img src="../assets/imgs/dep2.jpg" alt="Depoimento 2"></div>
-      <div class="testimonial-card"><img src="../assets/imgs/dep3.jpg" alt="Depoimento 3"></div>
-      <div class="testimonial-card"><img src="../assets/imgs/dep4.jpg" alt="Depoimento 4"></div>
-      <div class="testimonial-card"><img src="../assets/imgs/dep5.jpg" alt="Depoimento 5"></div>
-      <div class="testimonials-col">
-        <div class="testimonial-card"><img src="../assets/imgs/dep1.jpg" alt="Depoimento 1"></div>
-        <div class="testimonial-card"><img src="../assets/imgs/dep3.jpg" alt="Depoimento 3"></div>
-      </div>
-      <div class="testimonials-col">
-        <div class="testimonial-card"><img src="../assets/imgs/dep2.jpg" alt="Depoimento 2"></div>
-        <div class="testimonial-card"><img src="../assets/imgs/dep4.jpg" alt="Depoimento 4"></div>
-        <div class="testimonial-card"><img src="../assets/imgs/dep5.jpg" alt="Depoimento 5"></div>
-      </div>
+<!-- OFERTA -->
+<section id="oferta">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center">
+      <span class="eyebrow">Garanta sua vaga</span>
+      <h2 style="margin-top:14px">Escolha o seu <span class="it or">acesso</span></h2>
     </div>
-
-    <div style="text-align:center;">
-      <a href="https://pay.kiwify.com.br/YXoFAQf" target="_blank" class="btn btn-center">
-        Quero esse resultado
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     SECTION 9 — OFERTA/PREÇO
-============================================================ -->
-<section class="pricing-section">
-  <div class="pricing-bg" style="background-image:url('../assets/vaquinha.png');background-size:cover;background-position:center;"></div>
-  <div class="container" style="position:relative;z-index:2;">
-    <div class="pricing-content">
-      <div class="offer-box">
-        <h3>Claudificando<span class="br-mobile"></span> seu Conteúdo</h3>
-        <div class="offer-tags">
-          <div class="offer-tag">2 dias de imersão ao vivo</div>
-          <div class="offer-tag">10 e 11 de Julho, das 9h às 16h</div>
-          <div class="offer-tag">Grupo da imersão no WhatsApp</div>
-          <div class="offer-tag">Notion com workbook, instruções e prompts</div>
-        </div>
-        <hr class="price-divider">
-        <p class="price-main">12x R$7,96</p>
-        <p class="price-sub">ou R$77,00 à vista</p>
-        <p style="font-family:'Campeche',sans-serif;font-size:1rem;font-weight:700;color:var(--laranja);margin-top:12px;letter-spacing:1px;">SEGUNDO LOTE</p>
-        <hr class="price-divider">
-        <span class="btn-detail">Quer a gravação também? Some R$40 e assista quantas vezes quiser por 6 meses.</span>
-        <span class="btn-detail">Pagamento seguro pela Kiwify · vagas limitadas para a turma ao vivo</span>
-        <a href="https://pay.kiwify.com.br/YXoFAQf" target="_blank" class="btn btn-block">
-          Garantir minha vaga
-        </a>
-        <div class="urgency-wrap">
-          <div class="progress-bar-bg">
-            <div class="progress-bar-fill"></div>
-          </div>
-          <span class="urgency-label" style="color:var(--offwhite);opacity:0.5;">CORREEEE QUE O LOTE VAI ACABAR</span>
-        </div>
+    <div class="pricing">
+      <div class="plan">
+        <div class="pname">Ao vivo</div>
+        <div class="price">R$ 77 <small>à vista</small></div>
+        <div class="inst">ou 12x de R$ 7,96</div>
+        <ul>
+          <li>2 dias ao vivo · 10 e 11 de julho</li>
+          <li>Grupo de WhatsApp da turma</li>
+          <li>Notion com workbook e prompts</li>
+        </ul>
+        <a href="https://pay.kiwify.com.br/YXoFAQf" target="_blank" class="btn">Garantir minha vaga</a>
+      </div>
+      <div class="plan feat">
+        <span class="ribbon">Mais escolhido</span>
+        <div class="pname">Ao vivo + Gravação</div>
+        <div class="price">R$ 117 <small>à vista</small></div>
+        <div class="inst">acesso por 6 meses</div>
+        <ul>
+          <li>Tudo do plano ao vivo</li>
+          <li>Gravação completa por 6 meses</li>
+          <li>Reveja no seu ritmo, quando quiser</li>
+        </ul>
+        <a href="https://pay.kiwify.com.br/YXoFAQf" target="_blank" class="btn">Garantir minha vaga</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     SECTION 10 — FAQ
-============================================================ -->
-<section class="section-offwhite">
-  <div class="container">
+<!-- GARANTIA -->
+<section class="light">
+  <div class="wrap">
+    <div class="guarantee">
+      <div class="seal"><span><b>7</b>dias</span></div>
+      <div>
+        <h3 style="margin-bottom:6px">Garantia incondicional de 7 dias</h3>
+        <p class="muted">Se você comprar e mudar de ideia, é só pedir o reembolso em até 7 dias e devolvemos 100% do valor. Sem pergunta, sem letra miúda.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FECHAMENTO -->
+<section class="closing">
+  <div class="wrap">
+    <span class="eyebrow">A escolha</span>
+    <h2 style="margin-top:16px">Continuar postando no escuro, ou sair com a <span class="it or">máquina montada</span></h2>
+    <p class="lead" style="margin:0 auto">Dá pra continuar esperando a próxima indicação chegar. Ou dá pra reservar os dias 10 e 11 de julho e sair de lá com a sua marca posicionada, o Claude treinado na sua voz e os primeiros posts prontos pra publicar.</p>
+    <div style="margin-top:30px"><a href="#oferta" class="btn"><span class="dot"></span>Quero minha vaga</a></div>
+    <p class="scar">A turma é fechada e a vaga é por lote. Quando encher, fecha.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq light">
+  <div class="wrap" style="max-width:780px">
     <span class="eyebrow">Perguntas frequentes</span>
-    <h2>Tire suas dúvidas</h2>
-
-    <div class="faq-list">
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <h4>O que é o Claude e por que ele e não o ChatGPT?</h4>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-answer">É uma IA parecida com o ChatGPT, mas que escreve mais natural e segura melhor a sua voz. Não precisa conhecer nenhum dos dois, a gente ensina do zero.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <h4>Quando é e como funciona?</h4>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-answer">10 e 11 de julho, ao vivo, das 9h às 16h, com 1h de almoço. Dia 1 é posicionamento, Dia 2 é o Claude aplicado ao conteúdo. Tudo online, você só precisa de internet e do Claude instalado no computador.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <h4>Tem gravação?</h4>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-answer">Tem, no plano com gravação (R$77 do ao vivo + R$40). Você revê quantas vezes quiser por 6 meses. No plano só ao vivo (R$77), a gravação não entra.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <h4>Preciso saber usar IA?</h4>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-answer">Não. Funciona mesmo se você nunca abriu o Claude. O foco é estratégia.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <h4>O que preparo antes?</h4>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-answer">Só baixar o Claude no computador, porque a imersão é prática do começo ao fim. Plano Pro ajuda; no gratuito dá pra acompanhar, mas algumas coisas você pode não conseguir aplicar pelos limites.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <h4>Serve pro meu nicho?</h4>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-answer">Serve pra qualquer pessoa que vende pela própria marca. Já rodou com nutricionista, designer, advogada, terapeuta, consultora e criadora de conteúdo.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <h4>Vejo resultado logo depois?</h4>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-answer">Sim. Você sai com prompt pronto, pilares definidos e a lógica mapeada, dá pra começar a criar de forma estratégica já no dia seguinte.</div>
-      </div>
-
-    </div>
+    <h2 style="margin:14px 0 20px">Antes de você <span class="it or">decidir</span></h2>
+    <details><summary>Preciso saber usar IA?</summary><p>Não. O foco é estratégia, e a parte técnica a gente configura junto no dia.</p></details>
+    <details><summary>O que eu preciso preparar?</summary><p>Só baixar o Claude antes (o plano Pro rende mais, mas a gente te orienta).</p></details>
+    <details><summary>Serve pro meu nicho?</summary><p>Serve pra qualquer pessoa que vende pela própria marca, de serviço a produto.</p></details>
+    <details><summary>Vou ver resultado rápido?</summary><p>Você sai com prompts e estrutura prontos pra começar a postar já no dia seguinte.</p></details>
+    <details><summary>Tem gravação?</summary><p>Tem, no plano que inclui, válida por 6 meses.</p></details>
+    <details><summary>E se eu não puder estar ao vivo nos dois dias?</summary><p>O ideal é participar ao vivo, dias 10 e 11. Se precisar rever, o plano com gravação te dá acesso por 6 meses.</p></details>
   </div>
 </section>
 
-<!-- ============================================================
-     SECTION 11 — CTA FINAL
-============================================================ -->
-<section class="choice-section">
-  <div class="container" style="text-align:center;">
-    <h2>Você pode continuar travando pra postar e fechando só por indicação</h2>
-    <p class="choice-body">Ou pode sair daqui com conteúdo que atrai a pessoa certa, posiciona sua marca e vende, com a sua voz dentro e zero cara de IA.</p>
-    <a href="https://pay.kiwify.com.br/YXoFAQf" target="_blank" class="btn btn-center">
-      Garantir minha vaga
-    </a>
-    <div class="urgency-wrap">
-      <div class="progress-bar-bg">
-        <div class="progress-bar-fill"></div>
-      </div>
-      <span class="urgency-label" style="color:var(--offwhite);opacity:0.5;">BORA QUE TA ACABANDO O LOTE</span>
-    </div>
+<footer>
+  <div class="wrap">
+    <div class="logo">Claudificando<span class="or"> seu conteúdo</span></div>
+    <p style="margin-top:10px">Um workshop de Let &amp; Lud · @leticialmilani · @aludaraujo</p>
+    <p style="margin-top:6px">© Studio Propositum LTDA · CNPJ 46.934.525/0001-03</p>
   </div>
-</section>
-
-<!-- ============================================================
-     BANNER ANIMADO FINAL
-============================================================ -->
-<div class="marquee-section marquee-orange">
-  <div class="marquee-track">
-    <span>10 e 11 de julho</span>
-    <span>Ao vivo + gravação</span>
-    <span>Claude na prática</span>
-    <span>10 e 11 de julho</span>
-    <span>Ao vivo + gravação</span>
-    <span>Claude na prática</span>
-    <span>10 e 11 de julho</span>
-    <span>Ao vivo + gravação</span>
-    <span>Claude na prática</span>
-    <span>10 e 11 de julho</span>
-    <span>Ao vivo + gravação</span>
-    <span>Claude na prática</span>
-  </div>
-</div>
-
-<!-- ============================================================
-     RODAPÉ ESTÁTICO
-============================================================ -->
-<footer class="static-footer">
-  <p>Todos os direitos reservados ©<br>
-  Studio Propositum LTDA ®<br>
-  CNPJ 46.934.525/0001-03</p>
 </footer>
-
-<!-- ============================================================
-     STICKY FOOTER
-============================================================ -->
-<div class="sticky-footer">
-  <div class="footer-label">
-    <strong>Claudificando seu Conteúdo</strong> &nbsp;·&nbsp; 10 e 11 de julho &nbsp;·&nbsp; Workshop ao vivo + gravação
-  </div>
-  <a href="https://pay.kiwify.com.br/YXoFAQf" target="_blank" class="btn" style="padding:12px 28px;font-size:0.9rem;">
-    Garantir vaga
-  </a>
-</div>
-
-<!-- ============================================================
-     JAVASCRIPT
-============================================================ -->
-<script>
-  function toggleFaq(questionEl) {
-    const item = questionEl.parentElement;
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  }
-
-  const bars = document.querySelectorAll('.progress-bar-fill');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.animationPlayState = 'running';
-      }
-    });
-  }, { threshold: 0.5 });
-  bars.forEach(bar => {
-    bar.style.animationPlayState = 'paused';
-    observer.observe(bar);
-  });
-</script>
 
 </body>
 </html>
