@@ -108,7 +108,7 @@ src="https://www.facebook.com/tr?id=781489356029096&ev=PageView&noscript=1"
     font-family: 'Campeche', sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    padding-bottom: var(--footer-h);
+    padding-bottom: 0;
   }
 
   /* ============================================================
@@ -303,27 +303,28 @@ src="https://www.facebook.com/tr?id=781489356029096&ev=PageView&noscript=1"
      STICKY FOOTER
   ============================================================ */
   .sticky-footer {
-    position: fixed;
-    bottom: 0;
+    position: sticky;
+    top: 0;
     left: 0;
     right: 0;
     z-index: 999;
-    background: var(--offblack);
+    background: rgba(37,37,37,0.84);
+    backdrop-filter: blur(10px);
     height: var(--footer-h);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 32px;
-    box-shadow: 0 -2px 20px rgba(0,0,0,0.3);
+    border-bottom: 1px solid rgba(68,68,63,0.5);
   }
   .sticky-footer .footer-label {
     color: var(--offwhite);
     font-size: 0.82rem;
-    opacity: 0.75;
+    font-weight: 700;
+    letter-spacing: 0.04em;
   }
   .sticky-footer .footer-label strong {
-    color: var(--offwhite);
-    opacity: 1;
+    color: var(--laranja);
     font-size: 0.9rem;
   }
   @media (max-width: 600px) {
@@ -920,6 +921,16 @@ src="https://www.facebook.com/tr?id=781489356029096&ev=PageView&noscript=1"
 </head>
 <body>
 
+<!-- BARRA FIXA TOPO -->
+<div class="sticky-footer">
+  <div class="footer-label">
+    <strong>10 e 11 de julho</strong> &nbsp;·&nbsp; ao vivo &nbsp;·&nbsp; vagas por lote
+  </div>
+  <a href="https://pay.kiwify.com.br/YXoFAQf" target="_blank" class="btn" style="padding:12px 28px;font-size:0.9rem;">
+    Quero minha vaga
+  </a>
+</div>
+
 <!-- ============================================================
      HERO
 ============================================================ -->
@@ -1350,17 +1361,6 @@ src="https://www.facebook.com/tr?id=781489356029096&ev=PageView&noscript=1"
   CNPJ 46.934.525/0001-03</p>
 </footer>
 
-<!-- ============================================================
-     STICKY FOOTER
-============================================================ -->
-<div class="sticky-footer">
-  <div class="footer-label">
-    <strong>Claudificando seu Conteúdo</strong> &nbsp;·&nbsp; 10 e 11 de julho &nbsp;·&nbsp; Workshop ao vivo + gravação
-  </div>
-  <a href="https://pay.kiwify.com.br/YXoFAQf" target="_blank" class="btn" style="padding:12px 28px;font-size:0.9rem;">
-    Garantir vaga
-  </a>
-</div>
 
 <!-- ============================================================
      JAVASCRIPT
