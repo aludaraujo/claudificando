@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Descubra sua Identidade Verbal · Claudificando</title>
+<meta name="description" content="Teste gratuito de identidade verbal + prompt pronto pra usar no Claude. Descubra o seu jeito de escrever e crie conteúdo que soa como você.">
+
+<!-- ============ OPEN GRAPH (compartilhamento) ============ -->
+<meta property="og:title" content="Descubra sua Identidade Verbal · Claudificando">
+<meta property="og:description" content="Teste gratuito + prompt pronto pro Claude pra você escrever com a sua voz, sem cara de IA.">
+<meta property="og:type" content="website">
+
+<style>
+/* ---------- FONTES ---------- */
+@font-face{font-family:"Campeche";src:url("fonts/Campeche-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Campeche";src:url("fonts/Campeche-Black.otf") format("opentype");font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:"Larken";src:url("fonts/Larken-RegularItalic.otf") format("opentype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Larken";src:url("fonts/Larken-BoldItalic.ttf") format("truetype");font-weight:700;font-style:italic;font-display:swap}
+@font-face{font-family:"Uertas";src:url("fonts/Uertas.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+
+/* ---------- TOKENS ---------- */
+:root{
+  --bg:#252525; --bg2:#2c2c2a; --card:#32322f; --line:#44443f;
+  --ink:#F0EEE5; --muted:#aaa49b; --orange:#EB5E2B; --orange-soft:#f2784a;
+  --cream:#F0EEE5;
+  --sans:"Campeche","Helvetica Neue",Arial,system-ui,sans-serif;
+  --body:system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --serif:"Larken",Georgia,serif;
+  --maxw:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--ink); font-family:var(--body);
+  font-size:18px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(120% 80% at 50% -10%, #312c27 0%, var(--bg) 55%);
+  overflow-x:hidden; min-height:100vh;
+}
+/* textura granulada sutil */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+/* estampa de vaquinha translúcida ao fundo */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.05;
+  background:url("img/vaquinha.png") center top/cover no-repeat;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+/* ---------- TIPOGRAFIA ---------- */
+.eyebrow{font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange)}
+h1,h2,h3{font-family:var(--sans);font-weight:900;line-height:1.03;letter-spacing:-.01em}
+h1{font-size:clamp(34px,6vw,60px)}
+h2{font-size:clamp(24px,3.6vw,38px)}
+.it{font-family:var(--serif);font-style:italic;font-weight:400}
+.or{color:var(--orange)}
+.hook{font-family:var(--sans);font-weight:700;font-size:clamp(15px,2vw,18px);color:var(--muted);margin-bottom:14px;letter-spacing:.01em}
+.hook .or{color:var(--orange-soft)}
+.script{font-family:var(--sans);font-weight:900;letter-spacing:-.01em;color:var(--orange-soft);font-size:clamp(34px,6vw,60px);line-height:1.03;display:block;margin:2px 0 0}
+.lead{font-size:clamp(17px,2.2vw,21px);color:var(--ink);opacity:.92}
+.muted{color:var(--muted)}
+h1,h2,h3,.lead,.eyebrow{text-wrap:balance}
+p,li{text-wrap:pretty}
+
+/* ---------- TOPBAR ---------- */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(37,37,37,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 24px}
+.topbar .brand{display:flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:900;font-size:16px;letter-spacing:.01em}
+.topbar .brand img{height:26px;width:auto}
+.topbar .date{font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.04em;color:var(--muted)}
+.topbar .date b{color:var(--orange)}
+@media(max-width:560px){.topbar .date span{display:none}}
+
+/* ---------- LAYOUT PRINCIPAL ---------- */
+.main{padding:52px 0 80px}
+.grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+@media(max-width:900px){.grid{grid-template-columns:1fr;gap:40px}}
+
+/* coluna da esquerda (copy) */
+.badge{display:inline-flex;gap:9px;align-items:center;border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 0 rgba(232,88,40,.6);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(232,88,40,.55)}70%{box-shadow:0 0 0 12px rgba(232,88,40,0)}100%{box-shadow:0 0 0 0 rgba(232,88,40,0)}}
+h1{margin:20px 0 0}
+.lead{max-width:52ch;margin:20px 0 26px}
+.bullets{list-style:none;display:grid;gap:13px;margin-top:6px}
+.bullets li{display:flex;gap:12px;align-items:flex-start;font-size:16.5px;line-height:1.5}
+.bullets .ck{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:rgba(235,94,43,.14);border:1px solid rgba(235,94,43,.4);display:grid;place-items:center;margin-top:1px}
+.bullets .ck svg{width:13px;height:13px}
+.bullets b{color:var(--ink)}
+
+/* ---------- CARD DO FORMULÁRIO ---------- */
+.formcard{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:34px 30px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.formcard .kicker{font-family:var(--sans);font-weight:900;font-size:21px;line-height:1.15;margin-bottom:6px}
+.formcard .sub{font-size:15px;color:var(--muted);margin-bottom:22px}
+.field{margin-bottom:16px}
+.field label{display:block;font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.02em;margin-bottom:7px;color:var(--ink)}
+.field input{
+  width:100%;background:#2a2a27;border:1px solid var(--line);border-radius:12px;
+  color:var(--ink);font-family:var(--body);font-size:16px;padding:14px 15px;transition:border-color .15s,box-shadow .15s;
+}
+.field input::placeholder{color:#7d776d}
+.field input:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(235,94,43,.18)}
+.field input.err{border-color:#e0553a;box-shadow:0 0 0 3px rgba(224,85,58,.16)}
+.field .msg{font-size:12.5px;color:#f2784a;margin-top:6px;display:none}
+.field.invalid .msg{display:block}
+
+.btn{
+  width:100%;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--orange);color:#1a0f0a;font-family:var(--sans);font-weight:900;font-size:17px;
+  text-decoration:none;padding:17px 26px;border-radius:999px;border:0;cursor:pointer;margin-top:8px;
+  box-shadow:0 10px 30px rgba(232,88,40,.32);transition:transform .15s,box-shadow .15s,opacity .15s;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(232,88,40,.5)}
+.btn:disabled{opacity:.65;cursor:not-allowed;transform:none}
+.btn .spin{width:17px;height:17px;border:2px solid rgba(26,15,10,.35);border-top-color:#1a0f0a;border-radius:50%;animation:rot .7s linear infinite;display:none}
+.btn.loading .spin{display:inline-block}
+.btn.loading .label{opacity:.8}
+@keyframes rot{to{transform:rotate(360deg)}}
+
+.reassure{display:flex;align-items:center;justify-content:center;gap:7px;font-size:12.5px;color:var(--muted);margin-top:14px;text-align:center}
+.reassure svg{width:13px;height:13px;flex:0 0 auto}
+
+/* ---------- ESTADO DE OBRIGADO ---------- */
+.thanks{display:none;text-align:center;animation:fade .5s ease}
+.formcard.done .form-state{display:none}
+.formcard.done .thanks{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.thanks .check{width:64px;height:64px;border-radius:50%;background:rgba(235,94,43,.15);border:1px solid rgba(235,94,43,.45);display:grid;place-items:center;margin:0 auto 18px}
+.thanks .check svg{width:30px;height:30px}
+.thanks h2{font-size:26px;margin-bottom:10px}
+.thanks p{font-size:15.5px;color:var(--muted);margin-bottom:8px}
+.thanks .steps{text-align:left;background:#2a2a27;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:22px 0 6px}
+.thanks .steps li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;line-height:1.45;color:var(--ink)}
+.thanks .steps li+li{margin-top:12px}
+.thanks .steps .n{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--orange);color:#1a0f0a;font-family:var(--sans);font-weight:900;font-size:12px;display:grid;place-items:center;margin-top:1px}
+
+/* rodapé */
+.foot{text-align:center;padding:30px 0 10px;font-size:12.5px;color:var(--muted)}
+.foot a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+  <!-- ============ TOPBAR ============ -->
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand"><img src="img/claude-logo.svg" alt="Claude"> Claudificando</div>
+      <div class="date"><span>Workshop ao vivo · </span><b>10 e 11 de julho</b></div>
+    </div>
+  </header>
+
+  <!-- ============ CONTEÚDO ============ -->
+  <main class="main">
+    <div class="wrap grid">
+
+      <!-- COLUNA COPY -->
+      <section>
+        <span class="badge"><span class="pulse"></span> Teste gratuito · leva ~10 min</span>
+        <p class="hook">Cansada de escrever conteúdo com <span class="or">cara de IA</span>?</p>
+        <h1>Descubra em <span class="or">10 minutos</span> o seu <span class="it">tom de voz, ritmo e estilo</span></h1>
+        <span class="script">e escreva do seu jeito</span>
+        <p class="lead">Faça o teste de identidade verbal e, no final, você sai com um <b>prompt pronto</b> pra colar no Claude e receber conteúdo que soa como <i>você</i> — não como robô.</p>
+        <ul class="bullets">
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#f2784a" stroke-width="3.2"><path d="M4 12l5 5L20 6"/></svg></span><span>Revela o <b>seu jeito de escrever</b> em 4 dimensões: tom, linguagem, ritmo e pontuação</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#f2784a" stroke-width="3.2"><path d="M4 12l5 5L20 6"/></svg></span><span>Você recebe um <b>prompt pronto</b> pra o Claude escrever com a <b>sua</b> voz</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#f2784a" stroke-width="3.2"><path d="M4 12l5 5L20 6"/></svg></span><span>Chega de conteúdo <b>genérico</b> — comece a soar inconfundível</span></li>
+        </ul>
+      </section>
+
+      <!-- COLUNA FORM -->
+      <section>
+        <div class="formcard" id="formcard">
+
+          <!-- estado 1: formulário -->
+          <div class="form-state">
+            <div class="kicker">Faça o teste gratuitamente</div>
+            <div class="sub">É só se inscrever para liberar o acesso imediato.</div>
+            <form id="leadform" novalidate>
+              <div class="field" id="f-nome">
+                <label for="nome">Seu nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Como você quer ser chamada?" autocomplete="name">
+                <div class="msg">Escreve seu nome pra eu personalizar 🙂</div>
+              </div>
+              <div class="field" id="f-email">
+                <label for="email">Seu melhor e-mail</label>
+                <input type="email" id="email" name="email" placeholder="voce@email.com" autocomplete="email" inputmode="email">
+                <div class="msg">Confere o e-mail, parece que faltou algo.</div>
+              </div>
+              <div class="field" id="f-whats">
+                <label for="whatsapp">WhatsApp (com DDD)</label>
+                <input type="tel" id="whatsapp" name="whatsapp" placeholder="(11) 90000-0000" autocomplete="tel" inputmode="numeric" maxlength="16">
+                <div class="msg">Coloca o DDD + número, ex: (11) 91234-5678.</div>
+              </div>
+              <button type="submit" class="btn" id="submit">
+                <span class="spin"></span><span class="label">Quero fazer o teste →</span>
+              </button>
+              <div class="reassure">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+                Seus dados ficam seguros. Sem spam, prometo.
+              </div>
+            </form>
+          </div>
+
+          <!-- estado 2: obrigado + desbloqueio -->
+          <div class="thanks" id="thanks">
+            <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#f2784a" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></div>
+            <h2>Prontinho, <span id="thanks-nome" class="or">tudo certo</span>! ✨</h2>
+            <p>Seu acesso ao teste de identidade verbal está liberado. Clica no botão abaixo pra começar.</p>
+            <ol class="steps">
+              <li><span class="n">1</span><span>Responda as <b>4 etapas</b> do teste (tom, linguagem, ritmo, pontuação) — leva ~10 min.</span></li>
+              <li><span class="n">2</span><span>No final você recebe o seu <b>perfil verbal</b> + o <b>prompt pronto</b> pra colar no Claude.</span></li>
+              <li><span class="n">3</span><span>Cola o prompt no Claude e veja ele escrever <b>com a sua voz</b>.</span></li>
+            </ol>
+            <a class="btn" id="unlock" href="https://lapesse-verbal.netlify.app/" target="_blank" rel="noopener">
+              <span class="label">Começar o teste agora →</span>
+            </a>
+            <div class="reassure">Não abriu? <a href="https://lapesse-verbal.netlify.app/" target="_blank" rel="noopener" style="color:#f2784a">Clique aqui</a>.</div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <div class="foot">
+      <div class="wrap">Um presente do workshop <b>Claudificando seu conteúdo</b> · Lud Araújo &amp; Let Milani · <a href="https://claudificando.com.br/workshop/" target="_blank" rel="noopener">conheça o workshop</a></div>
+    </div>
+  </main>
+
+<script>
+/* ==================================================================
+   CONFIG — cole aqui a URL do seu Web App do Google Apps Script.
+   (passo a passo no arquivo COMO-CONFIGURAR.md)
+   ================================================================== */
+const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbyOfyd6tcuxYegNzLDCumE413SIaIi4aABb_d-6767DzgYosIqj_-uCujf6b2MJGUuY/exec";
+const TESTE_URL = "https://lapesse-verbal.netlify.app/";
+const ORIGEM = "captura-identidade-verbal";
+
+/* ---------- máscara de WhatsApp ---------- */
+const whats = document.getElementById('whatsapp');
+whats.addEventListener('input', () => {
+  let v = whats.value.replace(/\D/g,'').slice(0,11);
+  if(v.length > 6)      v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+  else if(v.length > 2) v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+  else if(v.length > 0) v = `(${v}`;
+  whats.value = v;
+});
+
+/* ---------- validação ---------- */
+function setInvalid(id, bad){
+  const wrap = document.getElementById(id);
+  wrap.classList.toggle('invalid', bad);
+  wrap.querySelector('input').classList.toggle('err', bad);
+}
+function validEmail(e){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+function validPhone(p){ return p.replace(/\D/g,'').length >= 10; }
+
+/* ---------- submit ---------- */
+const form   = document.getElementById('leadform');
+const btn    = document.getElementById('submit');
+const card   = document.getElementById('formcard');
+
+form.addEventListener('submit', async (ev) => {
+  ev.preventDefault();
+  const nome  = document.getElementById('nome').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const fone  = whats.value.trim();
+
+  const bN = nome.length < 2, bE = !validEmail(email), bP = !validPhone(fone);
+  setInvalid('f-nome', bN); setInvalid('f-email', bE); setInvalid('f-whats', bP);
+  if(bN || bE || bP) return;
+
+  btn.classList.add('loading'); btn.disabled = true;
+
+  const payload = new URLSearchParams({
+    nome, email, whatsapp: fone, origem: ORIGEM,
+    data: new Date().toLocaleString('pt-BR', {timeZone:'America/Sao_Paulo'})
+  });
+
+  try {
+    if (SHEET_ENDPOINT && !SHEET_ENDPOINT.startsWith("COLE_AQUI")) {
+      await fetch(SHEET_ENDPOINT, { method:'POST', mode:'no-cors', body: payload });
+    }
+  } catch(e) { /* fire-and-forget: não bloqueia a entrega da isca */ }
+
+  // guarda o nome pra thank-you e revela o desbloqueio
+  const first = nome.split(' ')[0] || 'tudo certo';
+  document.getElementById('thanks-nome').textContent = first;
+  setTimeout(() => {
+    card.classList.add('done');
+    document.getElementById('formcard').scrollIntoView({behavior:'smooth', block:'center'});
+  }, 550);
+});
+</script>
+</body>
+</html>
