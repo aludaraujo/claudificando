@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Descubra sua Identidade Verbal · Claudificando</title>
-<!-- build: teste-verbal v2 -->
+<!-- build: teste-verbal v3 (campo @instagram) -->
 <meta name="description" content="Teste gratuito de identidade verbal + prompt pronto pra usar no Claude. Descubra o seu jeito de escrever e crie conteúdo que soa como você.">
 
 <!-- ============ OPEN GRAPH (compartilhamento) ============ -->
@@ -211,6 +211,11 @@ h1{margin:20px 0 0}
                 <input type="tel" id="whatsapp" name="whatsapp" placeholder="(11) 90000-0000" autocomplete="tel" inputmode="numeric" maxlength="16">
                 <div class="msg">Coloca o DDD + número, ex: (11) 91234-5678.</div>
               </div>
+              <div class="field" id="f-insta">
+                <label for="instagram">Seu @ do Instagram</label>
+                <input type="text" id="instagram" name="instagram" placeholder="@seuusuario" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="31">
+                <div class="msg">Coloca seu @ do Instagram, ex: @leticialmilani.</div>
+              </div>
               <button type="submit" class="btn" id="submit">
                 <span class="spin"></span><span class="label">Quero fazer o teste →</span>
               </button>
@@ -266,6 +271,13 @@ whats.addEventListener('input', () => {
   whats.value = v;
 });
 
+/* ---------- @ do Instagram (garante um @ na frente, sem espaços) ---------- */
+const insta = document.getElementById('instagram');
+insta.addEventListener('input', () => {
+  const v = insta.value.replace(/\s/g,'').replace(/@/g,'');
+  insta.value = v ? '@' + v : '';
+});
+
 /* ---------- validação ---------- */
 function setInvalid(id, bad){
   const wrap = document.getElementById(id);
@@ -274,6 +286,7 @@ function setInvalid(id, bad){
 }
 function validEmail(e){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
 function validPhone(p){ return p.replace(/\D/g,'').length >= 10; }
+function validInsta(u){ return u.replace('@','').length >= 2; }
 
 /* ---------- submit ---------- */
 const form   = document.getElementById('leadform');
@@ -282,18 +295,19 @@ const card   = document.getElementById('formcard');
 
 form.addEventListener('submit', async (ev) => {
   ev.preventDefault();
-  const nome  = document.getElementById('nome').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const fone  = whats.value.trim();
+  const nome   = document.getElementById('nome').value.trim();
+  const email  = document.getElementById('email').value.trim();
+  const fone   = whats.value.trim();
+  const arroba = insta.value.trim();
 
-  const bN = nome.length < 2, bE = !validEmail(email), bP = !validPhone(fone);
-  setInvalid('f-nome', bN); setInvalid('f-email', bE); setInvalid('f-whats', bP);
-  if(bN || bE || bP) return;
+  const bN = nome.length < 2, bE = !validEmail(email), bP = !validPhone(fone), bI = !validInsta(arroba);
+  setInvalid('f-nome', bN); setInvalid('f-email', bE); setInvalid('f-whats', bP); setInvalid('f-insta', bI);
+  if(bN || bE || bP || bI) return;
 
   btn.classList.add('loading'); btn.disabled = true;
 
   const payload = new URLSearchParams({
-    nome, email, whatsapp: fone, origem: ORIGEM,
+    nome, email, whatsapp: fone, instagram: arroba, origem: ORIGEM,
     data: new Date().toLocaleString('pt-BR', {timeZone:'America/Sao_Paulo'})
   });
 
