@@ -301,10 +301,49 @@ footer .logo .or{color:var(--orange)}
 @media(max-width:640px){.depo-masonry{columns:1}}
 .depo-masonry figure{margin:0 0 18px;break-inside:avoid;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;box-shadow:0 14px 40px rgba(0,0,0,.28)}
 .depo-masonry img{width:100%;border-radius:8px;display:block}
+
+/* ---------- COUNTDOWN ---------- */
+.countdown-strip{background:rgba(232,88,40,.1);border-bottom:1px solid rgba(232,88,40,.25);padding:11px 0;text-align:center}
+.countdown-strip .wrap{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+.cd-label{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange)}
+.cd-timer{display:flex;align-items:center;gap:4px}
+.cd-unit{display:flex;flex-direction:column;align-items:center;min-width:42px}
+.cd-unit span{font-family:var(--sans);font-weight:900;font-size:22px;color:var(--ink);line-height:1}
+.cd-unit small{font-family:var(--sans);font-size:9px;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;margin-top:2px}
+.cd-sep{font-family:var(--sans);font-weight:900;font-size:18px;color:var(--orange);padding-bottom:12px}
+@media(max-width:640px){.cd-unit span{font-size:17px}.cd-unit{min-width:34px}.cd-label{font-size:10px}}
+
+/* ---------- MINI-OFERTA ---------- */
+.mini-offer{background:linear-gradient(135deg,#2a1f18,#1e1714);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:32px 0}
+.mini-offer-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.mini-offer-info{flex:1;min-width:200px}
+.mini-offer-info .eyebrow{margin-bottom:6px}
+.mini-offer-info p{color:var(--muted);font-size:15px}
+.mini-offer-price{display:flex;flex-direction:column;align-items:center;gap:2px}
+.mo-from{font-family:var(--sans);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.mo-price{font-family:var(--sans);font-weight:900;font-size:36px;color:var(--ink);line-height:1}
+.mo-inst{font-family:var(--sans);font-size:12px;color:var(--muted)}
+@media(max-width:640px){.mini-offer-inner{flex-direction:column;align-items:flex-start}.mini-offer-price{align-items:flex-start}}
 </style>
 </head>
 <body>
 <div class="bg-claude" aria-hidden="true"></div>
+
+<!-- COUNTDOWN -->
+<div class="countdown-strip">
+  <div class="wrap">
+    <span class="cd-label">Inscrições encerram em</span>
+    <div class="cd-timer">
+      <div class="cd-unit"><span id="cd-d">00</span><small>dias</small></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><span id="cd-h">00</span><small>horas</small></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><span id="cd-m">00</span><small>min</small></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><span id="cd-s">00</span><small>seg</small></div>
+    </div>
+  </div>
+</div>
 
 <!-- BARRA FIXA -->
 <div class="topbar">
@@ -342,6 +381,27 @@ footer .logo .or{color:var(--orange)}
     <h2 style="margin-top:14px">Você posta, posta, e parece que <span class="it or">fala com a parede</span></h2>
     <p class="lead muted">Os seguidores até crescem, mas vem gente que nunca vai comprar. As ideias acabam na terça. E quando você tenta usar o ChatGPT pra adiantar, sai um texto correto, organizado e sem alma, que você não teria coragem de publicar.</p>
     <p class="lead" style="margin-top:18px">No fim, o cliente bom continua chegando só por indicação. Uma fila que você não controla e que pode secar a qualquer momento.</p>
+  </div>
+</section>
+
+<!-- MINI-OFERTA -->
+<section class="mini-offer">
+  <div class="wrap">
+    <div class="mini-offer-inner">
+      <div class="mini-offer-info">
+        <div class="eyebrow">Workshop ao vivo</div>
+        <p><b style="color:var(--ink)">10 e 11 de julho · 9h às 16h</b> · com gravação disponível</p>
+      </div>
+      <div class="mini-offer-price">
+        <span class="mo-from">a partir de</span>
+        <span class="mo-price">R$ 37</span>
+        <span class="mo-inst">à vista</span>
+      </div>
+      <div class="cta-block">
+        <a href="https://pay.kiwify.com.br/fkzdOvL" class="btn" target="_blank">Quero garantir minha vaga</a>
+        <div class="urgency-bar"><span class="u-label">vagas limitadas</span><div class="u-track"><div class="u-fill"></div></div></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -630,9 +690,7 @@ footer .logo .or{color:var(--orange)}
     <span class="eyebrow">Perguntas frequentes</span>
     <h2 style="margin:14px 0 20px">Antes de você <span class="it or">decidir</span></h2>
     <details><summary>Preciso saber usar IA?</summary><p>Não. O foco é estratégia, e a parte técnica a gente configura junto no dia.</p></details>
-    <details><summary>O que eu preciso preparar?</summary><p>Só baixar o Claude antes (o plano Pro rende mais, mas a gente te orienta).</p></details>
     <details><summary>Serve pro meu nicho?</summary><p>Serve pra qualquer pessoa que vende pela própria marca, de serviço a produto.</p></details>
-    <details><summary>Vou ver resultado rápido?</summary><p>Você sai com prompts e estrutura prontos pra começar a postar já no dia seguinte.</p></details>
     <details><summary>Tem gravação?</summary><p>Tem, no plano que inclui, válida por 6 meses.</p></details>
     <details><summary>E se eu não puder estar ao vivo nos dois dias?</summary><p>O ideal é participar ao vivo, dias 10 e 11. Se precisar rever, o plano com gravação te dá acesso por 6 meses.</p></details>
   </div>
@@ -646,5 +704,21 @@ footer .logo .or{color:var(--orange)}
   </div>
 </footer>
 
+<script>
+(function(){
+  var deadline = new Date('2026-07-10T09:00:00-03:00');
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function update(){
+    var diff = deadline - new Date();
+    if(diff <= 0){ var s = document.querySelector('.countdown-strip'); if(s) s.style.display='none'; return; }
+    document.getElementById('cd-d').textContent = pad(Math.floor(diff/86400000));
+    document.getElementById('cd-h').textContent = pad(Math.floor((diff%86400000)/3600000));
+    document.getElementById('cd-m').textContent = pad(Math.floor((diff%3600000)/60000));
+    document.getElementById('cd-s').textContent = pad(Math.floor((diff%60000)/1000));
+  }
+  update();
+  setInterval(update, 1000);
+})();
+</script>
 </body>
 </html>
